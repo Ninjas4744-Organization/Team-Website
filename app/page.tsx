@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { IoPersonOutline, IoBuildOutline, IoTrophyOutline } from "react-icons/io5";
 
-import Willson from "@/public/assets/Willson.png";
+import Willson from "@/public/assets/robots/Willson.webp";
 import Carousel from "@/components/Carousel/Index";
 import CarouselCard from "@/components/Carousel/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
                 <Flex align='center' flex={1} justify='center' position='relative'>
                   <Box maxW={{ base: "450px", xl: "490px", lg: "460px" }} overflow='hidden' rounded='xl'>
                     <ChakraImage asChild height={"auto"} objectFit={"cover"} w={"full"}>
-                      <Image alt={"willson"} src={Willson} />
+                      <Image alt={"willson"} loading='lazy' placeholder='blur' src={Willson} />
                     </ChakraImage>
                   </Box>
                 </Flex>
