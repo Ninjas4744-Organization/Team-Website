@@ -13,7 +13,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ image, name, role }) => {
     <Center>
       <VStack>
         <ChakraImage asChild bg={"gray.900"} h={"250px"} objectFit={"contain"} ring={1} ringColor={"gray.800"} rounded={"lg"}>
-          <NextImage alt={`${name}-${role}`} src={image} />
+          <NextImage alt={`${name}-${role}`} draggable={"false"} src={image} />
         </ChakraImage>
         <VStack spaceY={"-3"}>
           <Heading color={"white"} size={"lg"}>
