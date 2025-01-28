@@ -13,11 +13,10 @@
 
 "use client";
 
-import { Box, Center, Container, Flex, Heading, Image as ChakraImage, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Image as ChakraImage, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 
 // Images
-
 import teamPicture from "@/public/assets/teamPicture.webp";
 // Leads
 import liorPicture from "@/public/assets/people/LiorPicture.png";
@@ -46,54 +45,66 @@ const Page = () => {
   const mentors = [
     { name: "Shai", role: "Mechanics mentor", image: shaiPicture },
     { name: "Pacha", role: "CAD mentor", image: pachaPicture },
-    { name: "Kfir", role: "Control mentor", image: kfirPicture },
+    { name: "Kfir", role: "Software mentor", image: kfirPicture },
     { name: "Etai", role: "Lead mentor", image: etaiPicture },
-    { name: "Tal", role: "Software mentor", image: talPicture },
+    { name: "Tal", role: "Control mentor", image: talPicture },
   ];
 
   return (
-    <Container scaleY={8} w='full'>
+    <Container maxW='full' mb={5} p={0}>
       {/* Hero Section */}
       <Box h='350px' overflow='hidden' position='relative' w='full'>
         <ChakraImage asChild h='100%' loading='lazy' objectFit='cover' position='absolute' w='100%'>
           <Image alt='TeamPicture' src={teamPicture} />
         </ChakraImage>
-        <Flex align='center' bg='rgba(0, 0, 0, 0.5)' color='white' flexDirection='column' h='full' justify='center' position='absolute' textAlign='center' w='full'>
-          <Heading color={"blue.500"} fontWeight='bold' size='5xl'>
+        <Flex align='center' bg='rgba(0, 0, 0, 0.5)' color='white' direction='column' h='full' justify='center' position='absolute' textAlign='center' w='full'>
+          <Heading color='blue.500' fontSize={{ base: "4xl", md: "5xl" }} fontWeight='bold'>
             Ninjas #4744
           </Heading>
-          <Text fontSize='xl'>Team</Text>
+          <Text fontSize='xl' mt={2}>
+            Team
+          </Text>
         </Flex>
       </Box>
 
-      {/* Mentors Section */}
-      <VStack mb={"5"} mt={"5"} px={2} w='full'>
-        <VStack spaceY={"-2"}>
-          <Heading size='3xl' textAlign='left'>
+      {/* Team Leads Section */}
+      <VStack px={2} w='full'>
+        {/* Centered Heading and Text */}
+        <VStack align='center' spaceY={-2} w='full'>
+          <Heading size='2xl' textAlign='center' w='full'>
             Mentors
           </Heading>
-          <Text color={"gray.400"}>Meet our mentors</Text>
+          <Text color='gray.400' textAlign='center' w='full'>
+            Meet our mentors
+          </Text>
         </VStack>
-        <Center flexDirection={{ base: "column", lgTo2xl: "row" }} spaceX={{ base: "unset", lgTo2xl: "5" }} spaceY={{ base: "3", lgTo2xl: "unset" }}>
-          {mentors.map((mentor, index) => (
-            <ImageCard key={index} image={mentor.image} name={mentor.name} role={mentor.role} />
+
+        {/* Team Leads Cards */}
+        <Flex direction={{ base: "column", lg: "row" }} gap={{ base: 3, lg: 5 }} justify='center' mt={5} w='full'>
+          {mentors.map((item, index) => (
+            <ImageCard key={index} image={item.image} name={item.name} role={item.role} />
           ))}
-        </Center>
+        </Flex>
       </VStack>
 
       {/* Team Leads Section */}
-      <VStack px={2} w='full'>
-        <VStack spaceY={"-2"}>
-          <Heading size='3xl' textAlign='left'>
-            Team leads
+      <VStack mt={10} px={2} w='full'>
+        {/* Centered Heading and Text */}
+        <VStack align='center' spaceY={-2} w='full'>
+          <Heading size='2xl' textAlign='center' w='full'>
+            Team Leads
           </Heading>
-          <Text color={"gray.400"}>Meet our mentors</Text>
+          <Text color='gray.400' textAlign='center' w='full'>
+            Meet our team leads
+          </Text>
         </VStack>
-        <Center flexDirection={{ base: "column", lgTo2xl: "row" }} spaceX={{ base: "unset", lgTo2xl: "5" }} spaceY={{ base: "3", lgTo2xl: "unset" }}>
-          {teamLeads.map((lead, index) => (
-            <ImageCard key={index} image={lead.image} name={lead.name} role={lead.role} />
+
+        {/* Team Leads Cards */}
+        <Flex direction={{ base: "column", lg: "row" }} gap={{ base: 3, lg: 5 }} justify='center' mt={5} w='full'>
+          {teamLeads.map((item, index) => (
+            <ImageCard key={index} image={item.image} name={item.name} role={item.role} />
           ))}
-        </Center>
+        </Flex>
       </VStack>
     </Container>
   );

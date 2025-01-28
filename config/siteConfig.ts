@@ -13,10 +13,10 @@ const siteConfig = {
       title: "Robots",
       href: "/robot",
     },
-    {
-      title: "Outreach",
-      href: "/outreach",
-    },
+    // {
+    //   title: "Outreach",
+    //   href: "/outreach",
+    // },
   ],
   siteLinks: {
     sponsors: "/sponsors",

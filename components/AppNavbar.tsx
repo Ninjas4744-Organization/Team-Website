@@ -49,9 +49,9 @@ const AppNavbar: React.FC = () => {
         </HStack>
 
         <Flex flexGrow={1} hideBelow={"lg"} justifyContent={"center"} w={"1/2"}>
-          <HStack spaceX={1}>
+          <HStack spaceX={1.5}>
             {siteConfig.navLinks.map((item, index) => (
-              <NavbarItem key={index} _hover={{ color: "blue.500" }} href={item.href} transition={"all"}>
+              <NavbarItem key={index} _hover={{ color: "blue.500" }} fontWeight={"medium"} href={item.href} transition={"all"}>
                 {item.title}
               </NavbarItem>
             ))}
@@ -116,7 +116,7 @@ const AppNavbar: React.FC = () => {
                 </Button>
               </HStack>
               {siteConfig.navLinks.map((item, index) => (
-                <NavbarItem key={index} _hover={{ color: "blue.500" }} href={item.href} pt={2} transition={"all"} w={"full"}>
+                <NavbarItem key={index} _hover={{ color: "blue.500" }} href={item.href} pt={2} transition={"all"} w={"full"} onClick={() => setMenuIsOpen(false)}>
                   {item.title}
                 </NavbarItem>
               ))}
