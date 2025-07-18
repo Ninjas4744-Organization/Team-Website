@@ -1,75 +1,103 @@
 "use client";
 
-import { Box, Container, chakra, Stack, VStack, HStack, Text, IconButton, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
 import React from "react";
-import { FaInstagram, FaGithub, FaFacebookF } from "react-icons/fa";
+import {FaFacebookF, FaGithub, FaInstagram} from "react-icons/fa";
 
 import TBAIcon from "./TBAIcon";
 
 import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
+import {IconButton} from "@/components/ui/IconButton";
+import styled from "styled-components";
+import {colors} from "@/styles/vars";
+import {Separator} from "@/components/ui/Separator";
+import {NavLinks} from "@/components/NavLinks";
 
-const StyledImage = chakra(Image);
-const StyledLink = chakra(NextLink);
+const FooterContainer = styled.div`
+	position: sticky;
+	z-index: 1;
 
-const Logo: React.FC = () => {
-	return <StyledImage alt='Ninjas Logo' h={10} src={NinjasLogo} w={10} />;
-};
+	._container {
+		max-width: 100%;
+		padding: 1rem;
+		justify-content: center;
+		align-items: center;
+		background-color: ${colors.background};
+		display: flex;
+		flex-direction: column;
 
-/**
- * AppFooter Component
- * This component serves as the footer for the application, providing a map view and copyright information.
- *
- * Features:
- * - Includes a copyright notice.
- */
+		> ._nav {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			width: 100%;
+		}
+
+		> ._lower {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			width: 100%;
+			
+			> ._rights_text {
+				text-align: center;
+				margin: 0 auto;
+				color: ${colors.text.secondary};
+				font-size: 0.875rem;
+			}
+			
+			> ._socials {
+				display: flex;
+				gap: 0.5rem;
+			}
+		}
+	}
+`;
+
 const AppFooter: React.FC = () => {
 	return (
-		<Box position='sticky' zIndex={1}>
-			<Container centerContent as={Stack} bg='gray.900' divideY={"1px"} maxW='full' p={2}>
-				<VStack maxW={"full"}>
-					<Logo />
-					<HStack spaceX={2}>
-						{siteConfig.navLinks.map((item, index) => (
-							<StyledLink key={index} _hover={{ color: "blue.600" }} href={item.href} paddingTop={2} transition={"all"} w={"full"}>
-								{item.title}
-							</StyledLink>
-						))}
-					</HStack>
-				</VStack>
-				<Box>
-					<Flex align='center' direction={{ base: "column", lgTo2xl: "row" }} justify='center' maxW='full' p={2}>
-						<Text color='gray.400' fontSize='sm' mb={2} mr={2} mt={2} textAlign='center' w='full'>
-							All rights reserved © Ninjas#4744 since 2013
-						</Text>
-						<HStack>
-							<NextLink href={siteConfig.siteLinks.github}>
-								<IconButton aria-label='GitHub' size='md' variant='ghost'>
-									<FaGithub />
-								</IconButton>
-							</NextLink>
-							<NextLink href={siteConfig.siteLinks.instagram}>
-								<IconButton aria-label='Instagram' size='md' variant='ghost'>
-									<FaInstagram />
-								</IconButton>
-							</NextLink>
-							<NextLink href={siteConfig.siteLinks.facebook}>
-								<IconButton aria-label='Facebook' size='md' variant='ghost'>
-									<FaFacebookF />
-								</IconButton>
-							</NextLink>
-							<NextLink href={siteConfig.siteLinks.tba}>
-								<IconButton aria-label={"TBA"} size={"md"} variant={"ghost"}>
-									<TBAIcon />
-								</IconButton>
-							</NextLink>
-						</HStack>
-					</Flex>
-				</Box>
-			</Container>
-		</Box>
+		<FooterContainer>
+			<div className="_container">
+				<div className="_nav">
+					<Image alt='Ninjas Logo' height={40} src={NinjasLogo} width={40}/>
+					<NavLinks/>
+				</div>
+				<Separator/>
+				<div className="_lower">
+					<div className="_rights_text">
+						All rights reserved © Ninjas #4744 since 2013
+					</div>
+					<div className="_socials">
+						<NextLink href={siteConfig.siteLinks.github}>
+							<IconButton aria-label='GitHub'>
+								<FaGithub/>
+							</IconButton>
+						</NextLink>
+						<NextLink href={siteConfig.siteLinks.instagram}>
+							<IconButton aria-label='Instagram'>
+								<FaInstagram/>
+							</IconButton>
+						</NextLink>
+						<NextLink href={siteConfig.siteLinks.facebook}>
+							<IconButton aria-label='Facebook'>
+								<FaFacebookF/>
+							</IconButton>
+						</NextLink>
+						<NextLink href={siteConfig.siteLinks.tba}>
+							<IconButton aria-label='TBA'>
+								<TBAIcon/>
+							</IconButton>
+						</NextLink>
+					</div>
+				</div>
+			</div>
+		</FooterContainer>
 	);
 };
 

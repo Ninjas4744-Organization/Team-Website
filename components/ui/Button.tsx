@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import {colors} from "@/styles/vars";
 
 export const Button = styled.button`
-	border: 1px solid #27272b;
+	border: 1px solid ${colors.border};
 	border-radius: 10px;
 	cursor: pointer;
 	display: inline-flex;
@@ -12,6 +13,6 @@ export const Button = styled.button`
 	line-height: 1.25rem;
 
 	&:hover, &._active {
-		background-color: #27272b;
+		background-color: ${colors.border};
 	}
 `;

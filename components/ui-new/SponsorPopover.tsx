@@ -6,13 +6,14 @@ import classNames from "classnames";
 import {FaHeart} from "react-icons/fa";
 import {Button} from "@/components/ui/Button";
 import {Separator} from "@/components/ui/Separator";
+import {colors} from "@/styles/vars";
 
 const PopoverButtonContainer = styled.div`
 	position: relative;
 	display: inline-block;
 
 	.popover-trigger {
-		border: 1px solid #27272b;
+		border: 1px solid ${colors.border};
 		border-radius: 10px;
 		cursor: pointer;
 		display: inline-flex;
@@ -23,7 +24,7 @@ const PopoverButtonContainer = styled.div`
 		line-height: 1.25rem;
 
 		&:hover, &._trigger-active {
-			background-color: #27272b;
+			background-color: ${colors.border};
 		}
 	}
 
