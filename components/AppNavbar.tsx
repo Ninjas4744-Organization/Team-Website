@@ -3,19 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import NextLink from "next/link";
-import { IconButton } from "@/components/ui-new/IconButton";
+import { IconButton } from "@/components/ui/IconButton";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { FaInstagram, FaGithub, FaFacebookF } from "react-icons/fa";
 import { motion } from "motion/react";
-
 import TBAIcon from "./TBAIcon";
-
 import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
 import {SponsorPopover} from "@/components/ui-new/SponsorPopover";
-import {mQuery} from "@/styles/vars";
+import {colors, mQuery} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
+import {NavLinks} from "@/components/NavLinks";
 
 interface MenuToggleProps {
 	onClick: () => void;
@@ -23,7 +22,7 @@ interface MenuToggleProps {
 }
 
 const NavbarMenuToggleStyle = styled.button`
-	border: 1px solid #27272b;
+	border: 1px solid ${colors.border};
 	border-radius: 10px;
 	cursor: pointer;
 	display: inline-flex;
@@ -52,7 +51,7 @@ const NavbarStyle = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: #18181b;
+	background-color: ${colors.background};
 
 	> ._logo {
 		padding: 10px;
@@ -74,23 +73,6 @@ const NavbarStyle = styled.div`
 			justify-content: center;
 			align-content: center;
 			flex-grow: 1;
-
-			._links {
-				margin: 20px;
-				justify-content: start;
-
-				> ._link {
-					font-weight: 500;
-					transition: all;
-					transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-					transition-duration: 150ms;
-					margin-right: 20px;
-
-					&:hover {
-						color: #3b82f6;
-					}
-				}
-			}
 		}
 
 		._buttons_group {
@@ -98,26 +80,12 @@ const NavbarStyle = styled.div`
 			align-items: center;
 			gap: 0.5rem;
 		}
-
-		._sponsor_button {
-			border-radius: 10px;
-			padding: 0.75rem;
-			box-sizing: border-box;
-			display: inline-flex;
-			border-width: 1px;
-			border-color: transparent;
-			cursor: pointer;
-			appearance: none;
-			justify-content: center;
-			outline: 0;
-			line-height: 1.25rem;
-		}
 	}
 `;
 
 const MobileMenuStyle = styled.div`
 	position: absolute;
-	background-color: #18181b;
+	background-color: ${colors.background};
 	border-radius: 0.375rem;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	padding: 1rem;
@@ -134,20 +102,9 @@ const MobileMenuStyle = styled.div`
 		font-weight: bold;
 		font-size: 1rem;
 		line-height: 1.5rem;
-		color: #ffffff;
 		padding: 0;
 		margin-bottom: 10px;
 		text-align: start;
-	}
-
-	> ._separator {
-		height: 1px;
-		background-color: #444444;
-		margin: 10px 0;
-		border: none;
-		opacity: 0.5;
-		width: 100%;
-		display: block;
 	}
 
 	> ._links {
@@ -156,7 +113,6 @@ const MobileMenuStyle = styled.div`
 		gap: 0.5rem;
 
 		> ._link {
-			color: #ffffff;
 			text-decoration: none;
 			padding: 0.5rem 0;
 			border-radius: 0.375rem;
@@ -167,8 +123,8 @@ const MobileMenuStyle = styled.div`
 			font-weight: 500;
 
 			&:hover {
-				background-color: #27272b;
-				color: #3b82f6;
+				background-color: ${colors.border};
+				color: ${colors.hover};
 			}
 		}
 	}
@@ -191,13 +147,7 @@ const AppNavbar: React.FC = () => {
 			</div>
 			<div className="_desktop_view">
 				<div className="_nav">
-					<div className="_links _buttons_group">
-						{siteConfig.navLinks.map((item, index) => (
-							<NextLink href={item.href} className="_link" key={index}>
-								{item.title}
-							</NextLink>
-						))}
-					</div>
+					<NavLinks />
 				</div>
 				<div className="_buttons_group">
 					<NextLink href={siteConfig.siteLinks.github}>
