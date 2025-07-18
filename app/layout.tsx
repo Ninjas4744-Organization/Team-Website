@@ -4,10 +4,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import "./globals.css";
 import { Provider } from "@/components/ui/provider";
 import AppNavbar from "@/components/AppNavbar";
 import AppFooter from "@/components/AppFooter";
+import {GlobalStyle} from "@/styles/GlobalStyle";
+import StyledComponentsRegistry from "@/lib/registry";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -35,13 +36,16 @@ export default function RootLayout({
 	return (
 		<html suppressHydrationWarning lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<Provider>
-					<AppNavbar />
-					<main>{children}</main>
-					<Analytics />
-					<SpeedInsights />
-					<AppFooter />
-				</Provider>
+				<StyledComponentsRegistry>
+					<GlobalStyle />
+					<Provider>
+						<AppNavbar />
+						<main>{children}</main>
+						<Analytics />
+						<SpeedInsights />
+						<AppFooter />
+					</Provider>
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	);
