@@ -16,7 +16,7 @@ const NavLinksContainer = styled.div`
 		margin-right: 20px;
 
 		&:hover {
-			color: ${colors.hover};
+			color: ${colors.accent};
 		}
 	}
 `;

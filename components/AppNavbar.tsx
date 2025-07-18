@@ -124,7 +124,7 @@ const MobileMenuStyle = styled.div`
 
 			&:hover {
 				background-color: ${colors.border};
-				color: ${colors.hover};
+				color: ${colors.accent};
 			}
 		}
 	}
