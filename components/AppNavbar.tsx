@@ -14,6 +14,8 @@ import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
 import {SponsorPopover} from "@/components/ui-new/SponsorPopover";
+import {mQuery} from "@/styles/vars";
+import {Separator} from "@/components/ui/Separator";
 
 interface MenuToggleProps {
 	onClick: () => void;
@@ -21,19 +23,19 @@ interface MenuToggleProps {
 }
 
 const NavbarMenuToggleStyle = styled.button`
-    border: 1px solid #27272b;
-    border-radius: 10px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem;
-    gap: 0.5rem;
-    box-sizing: border-box;
-    line-height: 1.25rem;
-	
-	@media screen and (min-width: 1024px) {
+	border: 1px solid #27272b;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.75rem;
+	gap: 0.5rem;
+	box-sizing: border-box;
+	line-height: 1.25rem;
+
+	${mQuery.desktop} {
 		display: none;
-    }
+	}
 `;
 const NavbarMenuToggle = ({ onClick, isMenuOpen }: MenuToggleProps) => {
 	return (
@@ -45,71 +47,72 @@ const NavbarMenuToggle = ({ onClick, isMenuOpen }: MenuToggleProps) => {
 
 const NavbarStyle = styled.div`
 	max-width: 100%;
-    height: 3.5rem;
-    padding-inline: 1rem;
-    display: flex;
-    flex-direction: row;
+	height: 3.5rem;
+	padding-inline: 1rem;
+	display: flex;
+	flex-direction: row;
 	align-items: center;
 	background-color: #18181b;
-	
+
 	> ._logo {
 		padding: 10px;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
 	}
-	
+
 	> ._desktop_view {
 		display: flex;
 		flex-direction: row;
 		flex-grow: 1;
-		
-		@media screen and (max-width: 1024px) {
+
+		${mQuery.mobile} {
 			display: none;
-        }
-		
-        > ._nav {
-            justify-content: center;
-            align-content: center;
-            flex-grow: 1;
+		}
 
-            ._links {
-                margin: auto 0;
-                justify-content: center;
+		> ._nav {
+			justify-content: center;
+			align-content: center;
+			flex-grow: 1;
 
-                > ._link {
-                    font-weight: 500;
-                    transition: all;
-                    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-                    transition-duration: 150ms;
+			._links {
+				margin: 20px;
+				justify-content: start;
 
-                    &:hover {
-                        color: #3b82f6;
-                    }
-                }
-            }
-        }
+				> ._link {
+					font-weight: 500;
+					transition: all;
+					transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+					transition-duration: 150ms;
+					margin-right: 20px;
 
-        ._buttons_group {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+					&:hover {
+						color: #3b82f6;
+					}
+				}
+			}
+		}
 
-        ._sponsor_button {
-            border-radius: 10px;
-            padding: 0.75rem;
-            box-sizing: border-box;
-            display: inline-flex;
-            border-width: 1px;
-            border-color: transparent;
-            cursor: pointer;
-            appearance: none;
-            justify-content: center;
-            outline: 0;
-            line-height: 1.25rem;
-        }
-    }
+		._buttons_group {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		._sponsor_button {
+			border-radius: 10px;
+			padding: 0.75rem;
+			box-sizing: border-box;
+			display: inline-flex;
+			border-width: 1px;
+			border-color: transparent;
+			cursor: pointer;
+			appearance: none;
+			justify-content: center;
+			outline: 0;
+			line-height: 1.25rem;
+		}
+	}
 `;
 
 const MobileMenuStyle = styled.div`
@@ -122,11 +125,11 @@ const MobileMenuStyle = styled.div`
 	left: 50%;
 	top: 2rem;
 	transform: translateX(-50%);
-	
-	@media screen and (min-width: 1024px) {
+
+	${mQuery.desktop} {
 		display: none;
 	}
-	
+
 	> ._title {
 		font-weight: bold;
 		font-size: 1rem;
@@ -135,8 +138,8 @@ const MobileMenuStyle = styled.div`
 		padding: 0;
 		margin-bottom: 10px;
 		text-align: start;
-    }
-	
+	}
+
 	> ._separator {
 		height: 1px;
 		background-color: #444444;
@@ -145,8 +148,8 @@ const MobileMenuStyle = styled.div`
 		opacity: 0.5;
 		width: 100%;
 		display: block;
-    }
-	
+	}
+
 	> ._links {
 		display: flex;
 		flex-direction: column;
@@ -157,11 +160,11 @@ const MobileMenuStyle = styled.div`
 			text-decoration: none;
 			padding: 0.5rem 0;
 			border-radius: 0.375rem;
-            transition: all;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-            transition-duration: 150ms;
+			transition: all;
+			transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+			transition-duration: 150ms;
 			cursor: pointer;
-            font-weight: 500;
+			font-weight: 500;
 
 			&:hover {
 				background-color: #27272b;
@@ -198,22 +201,22 @@ const AppNavbar: React.FC = () => {
 				</div>
 				<div className="_buttons_group">
 					<NextLink href={siteConfig.siteLinks.github}>
-						<IconButton aria-label={"GitHub"} size={"md"} variant={"ghost"}>
+						<IconButton aria-label={"GitHub"}>
 							<FaGithub />
 						</IconButton>
 					</NextLink>
 					<NextLink href={siteConfig.siteLinks.instagram}>
-						<IconButton aria-label={"Instagram"} size={"md"} variant={"ghost"}>
+						<IconButton aria-label={"Instagram"}>
 							<FaInstagram />
 						</IconButton>
 					</NextLink>
 					<NextLink href={siteConfig.siteLinks.facebook}>
-						<IconButton aria-label={"Facebook"} size={"md"} variant={"ghost"}>
+						<IconButton aria-label={"Facebook"}>
 							<FaFacebookF />
 						</IconButton>
 					</NextLink>
 					<NextLink href={siteConfig.siteLinks.tba}>
-						<IconButton aria-label={"TBA"} size={"md"} variant={"ghost"}>
+						<IconButton aria-label={"TBA"}>
 							<TBAIcon />
 						</IconButton>
 					</NextLink>
@@ -228,7 +231,7 @@ const AppNavbar: React.FC = () => {
 						<div className="_title">
 							Navigation
 						</div>
-						<div className="_separator" />
+						<Separator />
 						<div className="_links">
 							{siteConfig.navLinks.map((item, index) => (
 								<NextLink key={index} className="_link" href={item.href} onClick={() => setMenuIsOpen(false)}>
