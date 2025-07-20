@@ -11,7 +11,7 @@ import TBAIcon from "./TBAIcon";
 import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
-import {SponsorPopover} from "@/components/ui-new/SponsorPopover";
+import {SponsorPopover} from "@/components/SponsorPopover";
 import {colors, mQuery} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
 import {NavLinks} from "@/components/NavLinks";
