@@ -11,7 +11,7 @@ const siteConfig = {
 		},
 		{
 			title: "Robots",
-			href: "/robot",
+			href: "/robots",
 		},
 		// {
 		//   title: "Outreach",

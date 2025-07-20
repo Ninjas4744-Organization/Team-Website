@@ -9,6 +9,7 @@ import AppNavbar from "@/components/AppNavbar";
 import AppFooter from "@/components/AppFooter";
 import {GlobalStyle} from "@/styles/GlobalStyle";
 import StyledComponentsRegistry from "@/lib/registry";
+import PageTransition from "@/components/layout/PageTransition";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -40,7 +41,7 @@ export default function RootLayout({
 					<GlobalStyle />
 					<Provider>
 						<AppNavbar />
-						<main>{children}</main>
+						<PageTransition>{children}</PageTransition>
 						<Analytics />
 						<SpeedInsights />
 						<AppFooter />
