@@ -1,4 +1,3 @@
-// Type definition for the properties of each highlight card
 import styled from "styled-components";
 import {colors, mQuery} from "@/styles/vars";
 import {IoBuildOutline, IoPersonOutline, IoTrophyOutline} from "react-icons/io5";
@@ -8,15 +7,13 @@ type HighlightCardProps = {
 	description: string;
 };
 
-// Type definition for the properties of the icon box below each card
 type IconBoxProps = {
-	title: string; // Title to display under the icon
-	children: React.ReactNode; // Icon element to render
+	title: string;
+	children: React.ReactNode;
 };
 
-// Type definition for the structure of the highlights data
 type HighlightItem = HighlightCardProps & {
-	icon: React.ReactNode; // Icon associated with the highlight
+	icon: React.ReactNode;
 };
 
 const TeamHighlightsContainer = styled.div`
@@ -24,31 +21,11 @@ const TeamHighlightsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 2rem;
 	padding: 2rem;
 	width: 100vw;
 
 	> * {
 		width: 100%;
-	}
-
-	> ._title_section {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-bottom: 2rem;
-
-		> ._title {
-			font-weight: bold;
-			font-size: 3rem;
-			color: ${colors.accent};
-		}
-
-		> ._subtitle {
-			font-size: 1.125rem;
-			color: ${colors.text.secondary};
-			text-align: center;
-		}
 	}
 
 	> ._highlights {
@@ -93,13 +70,6 @@ export const TeamHighlights: React.FC = () => {
 
 	return (
 		<TeamHighlightsContainer>
-			<div className="_title_section">
-				<h1 className="_title">
-					Ninjas #4744
-				</h1>
-				<p className="_subtitle">We&apos;re the robotics team of Amal Hadera school since 2013.</p>
-			</div>
-
 			<div className="_highlights">
 				{highlights.map((highlight, index) => (
 					<div key={index} className="_highlight">
