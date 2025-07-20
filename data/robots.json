@@ -1,0 +1,133 @@
+{
+  "2025": {
+    "label": "2025",
+    "name": "Peck",
+    "year": 2025,
+    "comps": [
+      "2025isde2",
+      "2025isde3",
+      "2025iscmp"
+    ],
+    "description": "Peck is a versatile robot designed for the 2025 game Reefscape, featuring a fast elevator to all the levels of the reef, an intake that can take game pieces from every angle and a climber."
+  },
+  "2024_ios": {
+    "label": "2024 IOS",
+    "name": "Willson",
+    "year": 2024,
+    "comps": [
+      "2024isos2"
+    ],
+    "description": "Under the bumper intake, indexer and a shooter"
+  },
+  "2024": {
+    "label": "2024",
+    "name": "Toothless",
+    "year": 2024,
+    "comps": [
+      "2024isde2",
+      "2024isde4"
+    ],
+    "description": "Continues elevator for climbing, for intake and outtake we had continues elevator with bottom and top rollers."
+  },
+  "2023": {
+    "label": "2023",
+    "name": "Bolt",
+    "year": 2023,
+    "comps": [
+      "2023isde2",
+      "2023isde4"
+    ],
+    "description": "Bolt combines swerve drive mobility with a retractable telescoping arm for cone placement, enhanced by a powered roller intake system."
+  },
+  "2022": {
+    "label": "2022",
+    "name": "Pegasus",
+    "year": 2022,
+    "comps": [
+      "2022isde2",
+      "2022isde4",
+      "2022iscmp",
+      "2022isios"
+    ],
+    "description": "A multi-stage telescoping arm with encoded linkage provides vertical mobility, coupled with a roller-driven floor intake system."
+  },
+  "2020": {
+    "label": "2020",
+    "name": "Mamba",
+    "year": 2020,
+    "comps": [
+      "2020isde2"
+    ],
+    "description": "The robot features a bumper-mounted intake feeding into a rotating indexer drum, paired with a servo-driven turret shooter for rapid field deployment."
+  },
+  "2019": {
+    "label": "2019",
+    "name": "Venus",
+    "year": 2019,
+    "comps": [
+      "2019isde2",
+      "2019isde3",
+      "2019iscmp"
+    ],
+    "description": "Hatch Trapper: A pneumatic-powered hatch trapper. Indexer: An elevator mechanism used as an indexer"
+  },
+  "2018": {
+    "label": "2018",
+    "name": "Aeleos",
+    "year": 2018,
+    "comps": [
+      "2018isde2",
+      "2018isde4",
+      "2018iscmp"
+    ],
+    "description": "Collection System: A telescopic arm equipped with a compliant wheel intake, specifically designed for efficient and reliable collection of yellow cubes. Chassis: A tank drive chassis,"
+  },
+  "2017": {
+    "label": "2017",
+    "name": "Optimus",
+    "year": 2017,
+    "comps": [
+      "2017isde2",
+      "2017isde3",
+      "2017iscmp"
+    ],
+    "description": "Climbing System: A high-performance robot capable of scaling a 1.5-meter rope in just 3-4 seconds. Shooting System: Fires up to 4 balls per second with an impressive 80% accuracy rate, ensuring efficient scoring. Gear Collecting System: Seamlessly collects gears from the charging station and directly transfers them into the lift for smooth operation."
+  },
+  "2016": {
+    "label": "2016",
+    "name": "Hugo",
+    "year": 2016,
+    "comps": [
+      "2016ista",
+      "2016new"
+    ],
+    "description": "Shooting System: A powerful catapult mechanism designed to launch objects over obstacles with precision into the opposing alliance's tower. Defense Shield: A robust shield strategically deployed to protect the team’s tower from incoming challenges."
+  },
+  "2015": {
+    "label": "2015",
+    "name": "Moses",
+    "year": 2015,
+    "comps": [
+      "2015ista"
+    ],
+    "description": "Collecting System: A wheeled arm designed to efficiently gather crates with precision and ease. Lifting System: A telescopic arm, enabling smooth and reliable elevation for optimal operation"
+  },
+  "2014": {
+    "label": "2014",
+    "name": "Alpha",
+    "year": 2014,
+    "comps": [
+      "2014ista"
+    ],
+    "description": "Collecting System: Two sturdy sticks connected by a durable strap, ensuring efficient and reliable operation. Shooting System: Powered by precision-engineered pistons for high accuracy and performance."
+  },
+  "2013": {
+    "label": "2013",
+    "name": "Rocky",
+    "year": 2013,
+    "comps": [
+      "2013ista"
+    ],
+    "description": "Cartridge frisbee storage system, Shooter frisbee firing system with horizontal wheel Climber piston powered climber"
+  }
+}
