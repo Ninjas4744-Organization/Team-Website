@@ -2,9 +2,9 @@ import Image from "next/image";
 import type {Robot} from "@/lib/types/Robot";
 
 interface RobotPageProps {
-	params: {
-		robot: string;
-	};
+	params: Promise<{
+		id: string;
+	}>;
 }
 
 type Robots = {
@@ -12,7 +12,8 @@ type Robots = {
 };
 
 export default async function RobotPage({ params }: RobotPageProps) {
-	const robotId = params.robot;
+	const _params = await params;
+	const robotId = _params.id;
 
 	const robots: Robots = (await import('@/data/robots.json')).default;
 	const robot: Robot = robots[robotId];

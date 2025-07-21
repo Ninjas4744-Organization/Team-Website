@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Ninjas#4744",
+	title: "Ninjas #4744",
 	description: "We're FIRST robotics team from Hadera",
 	other: {
 		"google-site-verification": "cb8QhnaD_l9CKK1khygeTrrkyUpe-vIkrdaq-0gQZsE",

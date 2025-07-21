@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors, mQuery} from "@/styles/vars";
+import {colors, fontSizes, mQuery} from "@/styles/vars";
 import {IoBuildOutline, IoPersonOutline, IoTrophyOutline} from "react-icons/io5";
 
 type HighlightCardProps = {
@@ -132,14 +132,14 @@ const HighlightCardContainer = styled.div`
 
 	> ._heading {
 		font-weight: bold;
-		font-size: 1.125rem;
+		font-size: ${fontSizes.large};
 		color: ${colors.text.primary};
 		margin-bottom: 0.5rem;
 	}
 
 	> ._desc {
 		margin: 0;
-		font-size: 0.875rem;
+		font-size: ${fontSizes.small};
 		color: ${colors.text.secondary};
 	}
 `;

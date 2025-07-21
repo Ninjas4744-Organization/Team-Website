@@ -9,6 +9,7 @@ type RobotPageProps = {
 
 export async function generateMetadata({ params }: { params: Promise<RobotPageProps> }): Promise<Metadata> {
 	const {id} = await params;
+	const {default: robots} = await import('@/data/robots.json');
 	const robot: Robot = robots[id];
 
 	return {

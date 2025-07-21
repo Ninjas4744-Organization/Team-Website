@@ -12,7 +12,7 @@ import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
 import {SponsorPopover} from "@/components/SponsorPopover";
-import {colors, mQuery} from "@/styles/vars";
+import {colors, fontSizes, mQuery} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
 import {NavLinks} from "@/components/NavLinks";
 
@@ -100,7 +100,7 @@ const MobileMenuStyle = styled.div`
 
 	> ._title {
 		font-weight: bold;
-		font-size: 1rem;
+		font-size: ${fontSizes.medium};
 		line-height: 1.5rem;
 		padding: 0;
 		margin-bottom: 10px;
