@@ -11,7 +11,7 @@ import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import {IconButton} from "@/components/ui/IconButton";
 import styled from "styled-components";
-import {colors} from "@/styles/vars";
+import {colors, fontSizes} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
 import {NavLinks} from "@/components/NavLinks";
 
@@ -49,7 +49,7 @@ const FooterContainer = styled.div`
 				text-align: center;
 				margin: 0 auto;
 				color: ${colors.text.secondary};
-				font-size: 0.875rem;
+				font-size: ${fontSizes.small};
 			}
 			
 			> ._socials {

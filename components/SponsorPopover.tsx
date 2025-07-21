@@ -6,7 +6,7 @@ import classNames from "classnames";
 import {FaHeart} from "react-icons/fa";
 import {Button} from "@/components/ui/Button";
 import {Separator} from "@/components/ui/Separator";
-import {colors} from "@/styles/vars";
+import {colors, fontSizes} from "@/styles/vars";
 
 const PopoverButtonContainer = styled.div`
 	position: relative;
@@ -43,7 +43,7 @@ const PopoverButtonContainer = styled.div`
 
 		> ._title {
 			font-weight: bold;
-			font-size: 1rem;
+			font-size: ${fontSizes.medium};
 			line-height: 1.5rem;
 			color: #ffffff;
 			padding: 0;

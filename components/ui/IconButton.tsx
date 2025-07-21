@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {fontSizes} from "@/styles/vars";
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
@@ -13,7 +14,7 @@ const IconButtonContainer = styled.button`
 	cursor: pointer;
 	background-color: transparent;
 	transition: background-color 0.2s;
-	font-size: large;
+	font-size: ${fontSizes.large};
 
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.1);

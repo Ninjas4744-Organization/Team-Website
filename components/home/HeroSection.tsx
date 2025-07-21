@@ -2,7 +2,7 @@
 
 import styled, { keyframes } from 'styled-components';
 import { useEffect, useState } from 'react';
-import {colors} from "@/styles/vars";
+import {colors, fontSizes} from "@/styles/vars";
 
 const images = [
 	'/assets/robots/Peck.webp',
@@ -44,23 +44,23 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: ${fontSizes.huge};
   font-weight: bold;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    font-size: ${fontSizes.super};
   }
 `;
 
 const Subtitle = styled.p`
-	font-size: 1.2rem;
+	font-size: ${fontSizes.large};
 	margin-bottom: 2rem;
 	line-height: 1.6;
 	color: ${colors.text.secondary};
 
 	@media (max-width: 768px) {
-		font-size: 1rem;
+		font-size: ${fontSizes.medium};
 	}
 `;
 

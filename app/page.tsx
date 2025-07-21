@@ -11,7 +11,7 @@ import {AccordionItem, AccordionItemContent, AccordionItemTrigger, AccordionRoot
 import {TeamHighlights} from "@/components/home/TeamHighlights";
 import HeroSection from "@/components/home/HeroSection";
 import styled from "styled-components";
-import { colors } from "@/styles/vars";
+import {colors, fontSizes} from "@/styles/vars";
 
 const HomeWrapper = styled.div`
 	width: 100%;
@@ -27,13 +27,13 @@ const SponsorsWrapper = styled.div`
 	text-align: center;
 	
 	> ._title {
-		font-size: 2.25rem;
+		font-size: ${fontSizes.super};
 		font-weight: 600;
 		color: ${colors.text.primary};
 	}
 	
 	> ._subtitle {
-		font-size: 1.125rem;
+		font-size: ${fontSizes.large};
 		color: ${colors.text.secondary};
 		margin-top: 0.5rem;
 	}
