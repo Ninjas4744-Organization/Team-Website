@@ -4,8 +4,8 @@ import {Center, Image as ChakraImage, Text, VStack} from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 
-import Carousel from "@/components/Carousel/Index";
-import CarouselCard from "@/components/Carousel/CarouselCard";
+import Carousel from "@/components/ui/Carousel";
+import CarouselCard from "@/components/ui/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
 import {AccordionItem, AccordionItemContent, AccordionItemTrigger, AccordionRoot} from "@/components/ui/accordion";
 import {TeamHighlights} from "@/components/home/TeamHighlights";
