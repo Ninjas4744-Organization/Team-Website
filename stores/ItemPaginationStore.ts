@@ -2,7 +2,7 @@ import { makeObservable, observable, computed, action } from "mobx";
 
 export class ItemPaginationStore<T> {
 	@observable items: T[] = [];
-	@observable currentPage = 1;
+	@observable currentPage = 0;
 
 	constructor() {
 		makeObservable(this);

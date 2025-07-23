@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -11,14 +11,10 @@ import {GlobalStyle} from "@/styles/GlobalStyle";
 import StyledComponentsRegistry from "@/lib/registry";
 import PageTransition from "@/components/layout/PageTransition";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+const noto = Noto_Sans_Display({
+	subsets: ['latin'],
+	style: 'italic',
+	weight: '600',
 });
 
 export const metadata: Metadata = {
@@ -36,7 +32,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html suppressHydrationWarning lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+			<body className={noto.className}>
 				<StyledComponentsRegistry>
 					<GlobalStyle />
 					<Provider>
