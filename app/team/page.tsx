@@ -13,11 +13,6 @@
 
 "use client";
 
-import { Box, Container, Flex, Heading, Image as ChakraImage, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
-
-// Images
-import teamPicture from "@/public/assets/teamPicture.webp";
 // Leads
 import liorPicture from "@/public/assets/people/LiorPicture.png";
 import tzufPicture from "@/public/assets/people/TzufPicture.png";
@@ -31,8 +26,62 @@ import pachaPicture from "@/public/assets/people/PachaPicture.png";
 import shaiPicture from "@/public/assets/people/ShaiPicture.png";
 import talPicture from "@/public/assets/people/TalPicture.png";
 import ImageCard from "@/components/ImageCard";
+import styled from "styled-components";
+import {Hero} from "@/components/ui/Hero";
+import {colors, fontSizes, mQuery} from "@/styles/vars";
 
-const Page = () => {
+const TeamPageContainer = styled.div`
+	max-width: 100%;
+	margin-bottom: 1.25rem;
+	padding: 0;
+	
+	> ._section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding-inline: 0.5rem;
+		width: 100%;
+		margin: 1.5rem 0;
+		
+		> ._titles {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 0.5rem;
+			width: 100%;
+			
+			> * {
+				text-align: center;
+				width: 100%;
+			}
+			
+			> ._title {
+				font-size: ${fontSizes.xxlarge};
+				font-weight: 600;
+			}
+			
+			> ._subtitle {
+				color: ${colors.text.secondary};
+				
+			}
+		}
+		
+		> ._cards {
+			display: flex;
+			flex-direction: row;
+			gap: 1.25rem;
+			
+			${mQuery.mobile} {
+				flex-direction: column;
+				gap: 0.75rem;
+				margin-top: 1.25rem;
+				width: 100%;
+			}
+		}
+	}
+`;
+const TeamPage = () => {
 	// Define team leads and mentors data
 	const teamLeads = [
 		{ name: "Lior", role: "C&M", image: liorPicture },
@@ -51,63 +100,35 @@ const Page = () => {
 	];
 
 	return (
-		<Container maxW='full' mb={5} p={0}>
-			{/* Hero Section */}
-			<Box h='350px' overflow='hidden' position='relative' w='full'>
-				<ChakraImage asChild h='100%' loading='lazy' objectFit='cover' position='absolute' w='100%'>
-					<Image alt='TeamPicture' src={teamPicture} />
-				</ChakraImage>
-				<Flex align='center' bg='rgba(0, 0, 0, 0.5)' color='white' direction='column' h='full' justify='center' position='absolute' textAlign='center' w='full'>
-					<Heading color='blue.500' fontSize={{ base: "4xl", md: "5xl" }} fontWeight='bold'>
-						Ninjas #4744
-					</Heading>
-					<Text fontSize='xl' mt={2}>
-						Team
-					</Text>
-				</Flex>
-			</Box>
-
-			{/* Team Leads Section */}
-			<VStack px={2} w='full'>
-				{/* Centered Heading and Text */}
-				<VStack align='center' spaceY={-2} w='full'>
-					<Heading size='2xl' textAlign='center' w='full'>
-						Mentors
-					</Heading>
-					<Text color='gray.400' textAlign='center' w='full'>
-						Meet our mentors
-					</Text>
-				</VStack>
-
-				{/* Team Leads Cards */}
-				<Flex direction={{ base: "column", lg: "row" }} gap={{ base: 3, lg: 5 }} justify='center' mt={5} w='full'>
+		<TeamPageContainer>
+			<Hero
+				images={['/assets/teamPicture.webp']}
+				title="Ninjas #4744"
+				subtitle="Team" />
+			<div className="_section">
+				<div className="_titles">
+					<h2 className="_title">Mentors</h2>
+					<p className="_subtitle">Meet our mentors</p>
+				</div>
+				<div className="_cards">
 					{mentors.map((item, index) => (
 						<ImageCard key={index} image={item.image} name={item.name} role={item.role} />
 					))}
-				</Flex>
-			</VStack>
-
-			{/* Team Leads Section */}
-			<VStack mt={10} px={2} w='full'>
-				{/* Centered Heading and Text */}
-				<VStack align='center' spaceY={-2} w='full'>
-					<Heading size='2xl' textAlign='center' w='full'>
-						Team Leads
-					</Heading>
-					<Text color='gray.400' textAlign='center' w='full'>
-						Meet our team leads
-					</Text>
-				</VStack>
-
-				{/* Team Leads Cards */}
-				<Flex direction={{ base: "column", lg: "row" }} gap={{ base: 3, lg: 5 }} justify='center' mt={5} w='full'>
+				</div>
+			</div>
+			<div className="_section">
+				<div className="_titles">
+					<h2 className="_title">Leading Team</h2>
+					<p className="_subtitle">Meet our team leaders</p>
+				</div>
+				<div className="_cards">
 					{teamLeads.map((item, index) => (
 						<ImageCard key={index} image={item.image} name={item.name} role={item.role} />
 					))}
-				</Flex>
-			</VStack>
-		</Container>
+				</div>
+			</div>
+		</TeamPageContainer>
 	);
 };
 
-export default Page;
+export default TeamPage;

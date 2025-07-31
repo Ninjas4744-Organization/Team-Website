@@ -1,14 +1,14 @@
 'use client';
 
 import styled, { keyframes } from 'styled-components';
-import { useEffect, useState } from 'react';
-import {colors, fontSizes} from "@/styles/vars";
+import {FC, useEffect, useState} from 'react';
+import {colors, fontSizes, mQuery} from "@/styles/vars";
 
-const images = [
-	'/assets/robots/Peck.webp',
-	'/assets/teamPicture.webp',
-	'/assets/robots/Willson.webp',
-];
+type HeroProps = {
+	images: string[];
+	title: string;
+	subtitle: string;
+};
 
 const fade = keyframes`
 	from { opacity: 0; }
@@ -23,7 +23,6 @@ const Wrapper = styled.section`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	//padding: 2rem;
 	overflow: hidden;
 `;
 
@@ -59,12 +58,12 @@ const Subtitle = styled.p`
 	line-height: 1.6;
 	color: ${colors.text.secondary};
 
-	@media (max-width: 768px) {
+	${mQuery.mobile} {
 		font-size: ${fontSizes.medium};
 	}
 `;
 
-export default function HeroSection() {
+export const Hero: FC<HeroProps> = ({images, title, subtitle}) => {
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -78,12 +77,9 @@ export default function HeroSection() {
 		<Wrapper>
 			<BackgroundImage image={images[index]} />
 			<Content>
-				<Title>Ninjas #4744</Title>
-				<Subtitle>
-					We're the robotics team of Amal Hadera high school since 2013.<br/>
-					We're a passionate robotics team competing in FIRST. With creativity, innovation, and teamwork, we build more than robots – we build future leaders.
-				</Subtitle>
+				<Title>{title}</Title>
+				<Subtitle dangerouslySetInnerHTML={{__html: subtitle}}/>
 			</Content>
 		</Wrapper>
 	);
-}
+};

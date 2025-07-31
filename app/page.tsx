@@ -9,9 +9,9 @@ import CarouselCard from "@/components/ui/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
 import {AccordionItem, AccordionItemContent, AccordionItemTrigger, AccordionRoot} from "@/components/ui/accordion";
 import {TeamHighlights} from "@/components/home/TeamHighlights";
-import HeroSection from "@/components/home/HeroSection";
 import styled from "styled-components";
 import {colors, fontSizes} from "@/styles/vars";
+import {Hero} from "@/components/ui/Hero";
 
 const HomeWrapper = styled.div`
 	width: 100%;
@@ -42,7 +42,15 @@ const SponsorsWrapper = styled.div`
 const Home: React.FC = () => {
 	return (
 		<HomeWrapper>
-			<HeroSection />
+			<Hero
+				images={[
+					"/assets/robots/Peck.webp",
+					"/assets/teamPicture.webp",
+					"/assets/robots/Willson.webp"
+				]}
+				title="Ninjas #4744"
+				subtitle="We're the robotics team of Amal Hadera high school since 2013.<br/>
+					We're a passionate robotics team competing in FIRST. With creativity, innovation, and teamwork, we build more than robots – we build future leaders." />
 			<TeamHighlights/>
 			<SponsorsWrapper>
 				<h2 className="_title">Our supporters</h2>
