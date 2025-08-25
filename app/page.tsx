@@ -1,17 +1,16 @@
 "use client";
 
-import {Center, Image as ChakraImage, Text, VStack} from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 
 import Carousel from "@/components/ui/Carousel";
 import CarouselCard from "@/components/ui/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
-import {AccordionItem, AccordionItemContent, AccordionItemTrigger, AccordionRoot} from "@/components/ui/accordion";
 import {TeamHighlights} from "@/components/home/TeamHighlights";
 import styled from "styled-components";
 import {colors, fontSizes} from "@/styles/vars";
 import {Hero} from "@/components/ui/Hero";
+import {Accordion} from "@/components/ui/Accordion";
 
 const HomeWrapper = styled.div`
 	width: 100%;
@@ -39,6 +38,24 @@ const SponsorsWrapper = styled.div`
 	}
 `;
 
+const Sponsor = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+	
+	> .image {
+		width: 80%;
+		height: auto;
+		object-fit: cover;
+	}
+	
+	> .description {
+        font-size: 1rem;
+        text-align: center;
+	}
+`;
+
 const Home: React.FC = () => {
 	return (
 		<HomeWrapper>
@@ -60,27 +77,12 @@ const Home: React.FC = () => {
 						<CarouselCard key={index} cardDescription={item.description} cardImage={item.logo} cardTitle={item.title}/>
 					))}
 				</Carousel>
-				<AccordionRoot collapsible defaultValue={["a"]} hideFrom={"lg"} rounded={"sm"} variant={"subtle"} w={"100%"}>
-					{Sponsors.map((item, index) => (
-						<AccordionItem key={index} value={item.value} w={"100%"}>
-							<AccordionItemTrigger fontSize={"sm"} fontWeight={"medium"} p={2} w={"100%"}>
-								{item.title}
-							</AccordionItemTrigger>
-							<AccordionItemContent p={2}>
-								<Center>
-									<VStack>
-										<ChakraImage asChild height={"auto"} objectFit={"cover"} w={"80%"}>
-											<Image alt={`${item.title}`} src={item.logo}/>
-										</ChakraImage>
-										<VStack>
-											<Text>{item.description}</Text>
-										</VStack>
-									</VStack>
-								</Center>
-							</AccordionItemContent>
-						</AccordionItem>
-					))}
-				</AccordionRoot>
+				{Sponsors.map((item, index) => <Accordion key={"sponsor-" + index} title={item.title}>
+					<Sponsor>
+						<Image alt={`${item.title}`} src={item.logo} className="image"/>
+						<p className="description">{item.description}</p>
+					</Sponsor>
+				</Accordion>)}
 			</SponsorsWrapper>
 		</HomeWrapper>
 	);

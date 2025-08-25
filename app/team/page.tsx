@@ -25,7 +25,7 @@ import kfirPicture from "@/public/assets/people/KfirPicture.png";
 import pachaPicture from "@/public/assets/people/PachaPicture.png";
 import shaiPicture from "@/public/assets/people/ShaiPicture.png";
 import talPicture from "@/public/assets/people/TalPicture.png";
-import ImageCard from "@/components/ImageCard";
+import ImageCard from "@/components/home/ImageCard";
 import styled from "styled-components";
 import {Hero} from "@/components/ui/Hero";
 import {colors, fontSizes, mQuery} from "@/styles/vars";

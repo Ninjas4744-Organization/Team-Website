@@ -94,6 +94,7 @@ const IconBoxContainer = styled.div`
 		height: 5rem;
 		width: 5rem;
 		align-content: center;
+		text-align: center;
 
 		* {
 			margin: auto;

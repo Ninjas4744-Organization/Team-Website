@@ -1,34 +1,88 @@
 import React from "react";
-import { Box, Center, Image as ChakraImage, Heading, HStack, VStack, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import styled from "styled-components";
+import {colors, fontSizes} from "@/styles/vars";
 
-interface CarouselCardProperties {
+interface CarouselCardProps {
 	cardTitle: string;
 	cardDescription: string;
 	cardImage: string;
 }
 
-const CarouselCard: React.FC<CarouselCardProperties> = ({ cardTitle, cardDescription, cardImage }) => {
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+const CardContainer = styled.div`
+	display: flex;
+	background-color: ${colors.background};
+	border-radius: 0.5rem;
+	width: 83.3333%;
+	min-height: 300px;
+	border: 1px solid ${colors.border};
+	box-sizing: border-box;
+`;
+
+const Content = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	padding: 16px;
+	gap: 1.25rem;
+`;
+
+const ImageWrapper = styled.div`
+	width: 60%;
+
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 0.5rem;
+	}
+`;
+
+const TextWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+`;
+
+const Title = styled.h2`
+	color: white;
+	font-size: ${fontSizes.super};
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	text-align: start;
+`;
+
+const Description = styled.p`
+	color: white;
+	font-size: ${fontSizes.medium};
+	margin-top: 2.5rem;
+	text-align: start;
+`;
+
+export const CarouselCard: React.FC<CarouselCardProps> = ({ cardTitle, cardDescription, cardImage }) => {
 	return (
-		<Box display={"flex"} justifyContent={"center"}>
-			<Center bg={"gray.800"} display={"flex"} height={{ base: "auto", lg: "300px" }} ring={"1px"} ringColor={"gray.600"} rounded={"lg"} w={"10/12"}>
-				<HStack justifyContent='space-evenly' p={2} spaceX={4} spaceY={5}>
-					<ChakraImage asChild height={"auto"} objectFit={"cover"} w={"60%"}>
+		<Wrapper>
+			<CardContainer>
+				<Content>
+					<ImageWrapper>
 						<Image alt={`${cardTitle}-${cardDescription}`} src={cardImage} />
-					</ChakraImage>
-					<Center>
-						<VStack>
-							<Heading color={"white"} fontSize={"4xl"} fontWeight={"bold"} mb={2} textAlign={"start"} w={"full"}>
-								{cardTitle}
-							</Heading>
-							<Text fontSize={"md"} mt={10} textAlign={"start"}>
-								{cardDescription}
-							</Text>
-						</VStack>
-					</Center>
-				</HStack>
-			</Center>
-		</Box>
+					</ImageWrapper>
+					<TextWrapper>
+						<Title>{cardTitle}</Title>
+						<Description>{cardDescription}</Description>
+					</TextWrapper>
+				</Content>
+			</CardContainer>
+		</Wrapper>
 	);
 };
 

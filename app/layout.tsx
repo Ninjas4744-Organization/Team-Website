@@ -4,7 +4,6 @@ import { Noto_Sans_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Provider } from "@/components/ui/provider";
 import AppNavbar from "@/components/AppNavbar";
 import AppFooter from "@/components/AppFooter";
 import {GlobalStyle} from "@/styles/GlobalStyle";
@@ -35,13 +34,11 @@ export default function RootLayout({
 			<body className={noto.className}>
 				<StyledComponentsRegistry>
 					<GlobalStyle />
-					<Provider>
-						<AppNavbar />
-						<PageTransition>{children}</PageTransition>
-						<Analytics />
-						<SpeedInsights />
-						<AppFooter />
-					</Provider>
+					<AppNavbar />
+					<PageTransition>{children}</PageTransition>
+					<Analytics />
+					<SpeedInsights />
+					<AppFooter />
 				</StyledComponentsRegistry>
 			</body>
 		</html>
