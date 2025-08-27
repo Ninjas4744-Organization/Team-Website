@@ -8,3 +8,6 @@ Now you're good to go :)
 
 ## Running
 ```bun run dev```
+
+Created by Lior SHaposhnikov, modified: Ninjas4744
+LICENSED UNDER Apache-2.0 license.
