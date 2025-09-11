@@ -28,11 +28,11 @@ export default async function RobotPage({ params }: RobotPageProps) {
 			<div>
 				<div className="_robot_image_container">
 					<Image
-					src={`/assets/robots/${robot.name}.webp`}
-					alt={`Robot ${robot.name}`}
-					width={800}
-					height={600}
-					className="_robot_image" />
+						src={`/assets/robots/${robot.name}.webp`}
+						alt={`Robot ${robot.name}`}
+						width={800}
+						height={600}
+						className="_robot_image" />
 				</div>
 				<h1>{robot.name}</h1>
 				<p><strong>Year:</strong> {robot.year}</p>
