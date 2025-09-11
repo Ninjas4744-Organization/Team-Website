@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type {Robot} from "@/lib/types/Robot";
+import { RobotPageContainer } from "@/components/robots/RobotPageContainer";
 
 interface RobotPageProps {
 	params: Promise<{
@@ -23,17 +24,23 @@ export default async function RobotPage({ params }: RobotPageProps) {
 	}
 
 	return (
-		<main>
-			<h1>{robot.name}</h1>
-			<p><strong>Year:</strong> {robot.year}</p>
-			<p><strong>Description:</strong> {robot.description}</p>
+		<RobotPageContainer>
+			<div>
+				<div className="_robot_image_container">
+					<Image
+					src={`/assets/robots/${robot.name}.webp`}
+					alt={`Robot ${robot.name}`}
+					width={800}
+					height={600}
+					className="_robot_image" />
+				</div>
+				<h1>{robot.name}</h1>
+				<p><strong>Year:</strong> {robot.year}</p>
+			</div>
+			<div className="_description_container">
+				<p>{robot.description}</p>
+			</div>
 
-			<Image
-				src={`/assets/robots/${robot.name}.webp`}
-				alt={`Robot ${robot.name}`}
-				width={800}
-				height={600}
-			/>
-		</main>
+		</RobotPageContainer>
 	);
 }
