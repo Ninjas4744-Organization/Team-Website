@@ -21,7 +21,7 @@ const ImageCardContainer = styled.div`
 	> ._image {
         background-color: ${colors.accent_background};
         height: 250px;
-        width: auto;
+        width: 250px;
         display: flex;
         justify-content: center;
         align-items: center;

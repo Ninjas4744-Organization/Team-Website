@@ -14,17 +14,17 @@
 "use client";
 
 // Leads
-import liorPicture from "@/public/assets/people/LiorPicture.png";
-import tzufPicture from "@/public/assets/people/TzufPicture.png";
+import elhayPicture from "@/public/assets/people/ElhayPicture2.png";
+import tzufPicture from "@/public/assets/people/TzufPicture3.png";
 import eitanPicture from "@/public/assets/people/EitanPicture.png";
-import idoPicture from "@/public/assets/people/IdoPicture.png";
-import ronPicture from "@/public/assets/people/RonPicture.png";
+import yaroslavaPicture from "@/public/assets/people/YaroslavaPicture.png";
+import orianPicture from "@/public/assets/people/OrianPicture2.png";
 // Mentors
-import etaiPicture from "@/public/assets/people/EtaiPicture.png";
+import etaiPicture from "@/public/assets/people/EtaiPicture2.png";
 import kfirPicture from "@/public/assets/people/KfirPicture.png";
 import pachaPicture from "@/public/assets/people/PachaPicture.png";
 import shaiPicture from "@/public/assets/people/ShaiPicture.png";
-import talPicture from "@/public/assets/people/TalPicture.png";
+import talPicture from "@/public/assets/people/TalPicture2.png";
 import ImageCard from "@/components/home/ImageCard";
 import styled from "styled-components";
 import {Hero} from "@/components/ui/Hero";
@@ -84,25 +84,29 @@ const TeamPageContainer = styled.div`
 const TeamPage = () => {
 	// Define team leads and mentors data
 	const teamLeads = [
-		{ name: "Lior", role: "C&M", image: liorPicture },
-		{ name: "Tzuf", role: "Captain", image: tzufPicture },
-		{ name: "Eitan", role: "Software", image: eitanPicture },
-		{ name: "Ido", role: "Mechanics", image: idoPicture },
-		{ name: "Ron", role: "Control", image: ronPicture },
+		{ name: "Elhay Journo", role: "Outreach", image: elhayPicture },
+		{ name: "Eitan Grimblat", role: "Software", image: eitanPicture },
+		{ name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
+		{ name: "Yaroslava Avdeev", role: "Mechanics", image: yaroslavaPicture },
+		{ name: "Orian Scripcaru", role: "Electronics", image: orianPicture },
 	];
 
 	const mentors = [
-		{ name: "Shai", role: "Mechanics mentor", image: shaiPicture },
-		{ name: "Pacha", role: "CAD mentor", image: pachaPicture },
-		{ name: "Kfir", role: "Software mentor", image: kfirPicture },
-		{ name: "Etai", role: "Lead mentor", image: etaiPicture },
-		{ name: "Tal", role: "Control mentor", image: talPicture },
+		{ name: "Ido Shoshani", role: "Strategy", image: shaiPicture },
+		{ name: "Michal Amsalem", role: "Mechanics", image: shaiPicture },
+		{ name: "Dudu Chili", role: "Electronics", image: shaiPicture },
+		{ name: "Shai Leib", role: "Mechanics", image: shaiPicture },
+		{ name: "Etai Rachmilov", role: "Lead mentor", image: etaiPicture },
+		{ name: "Tal Ben Amram", role: "Software", image: talPicture },
+		{ name: "Jacob Nazarov", role: "CAD", image: shaiPicture },
+		{ name: "Kfir Nevo", role: "Software & Community", image: kfirPicture },
+		{ name: "Guy Pacha", role: "CAD", image: pachaPicture },
 	];
 
 	return (
 		<TeamPageContainer>
 			<Hero
-				images={['/assets/teamPicture.webp']}
+				images={['/assets/teamPicture2.webp']}
 				title="Ninjas #4744"
 				subtitle="Team" />
 			<div className="_section">
