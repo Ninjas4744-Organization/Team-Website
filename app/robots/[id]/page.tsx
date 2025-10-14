@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type {Robot} from "@/lib/types/Robot";
 import { RobotPageContainer } from "@/components/robots/RobotPageContainer";
+import classNames from 'classnames';
 
 interface RobotPageProps {
 	params: Promise<{
@@ -23,6 +24,8 @@ export default async function RobotPage({ params }: RobotPageProps) {
 		return <p>Robot not found</p>;
 	}
 
+    const h1Class: string = classNames({"_name_regular": robot.name != "P.E.K.K.A"}, {"_name_pekka": robot.name == "P.E.K.K.A"});
+
 	return (
 		<RobotPageContainer>
 			<div>
@@ -34,7 +37,7 @@ export default async function RobotPage({ params }: RobotPageProps) {
 						height={600}
 						className="_robot_image" />
 				</div>
-				<h1>{robot.name}</h1>
+				<h1 className={h1Class}>{robot.name}</h1>
 				<p><strong>Year:</strong> {robot.year}</p>
 			</div>
 			<div className="_description_container">

@@ -1,4 +1,13 @@
 {
+  "2025_ios": {
+    "label": "2025 IOS",
+    "name": "P.E.K.K.A",
+    "year": 2025,
+    "comps": [
+      "2025stbe"
+    ],
+    "description": "P.E.K.K.A is a robot inspired by Chill Out #1778, featuring a floor intake that feeds coral into an arm-elevator system for fast, precise reef scoring using 250 Hz odometry and 60 FPS vision filtered for close tags only. It can also collect algae from the floor or the reef through the arm and score it in the net or processor, though it has no climbing mechanism."
+  },
   "2025": {
     "label": "2025",
     "name": "Peck",

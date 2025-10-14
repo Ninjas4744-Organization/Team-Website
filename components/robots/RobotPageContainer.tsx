@@ -32,6 +32,19 @@ export const RobotPageContainer = styled.div`
         > h1 {
             padding-left: 40px;
         }
+        
+        > ._name_regular {
+            
+        }
+
+        > ._name_pekka {
+            color: rgb(160, 0, 255);
+            font-weight: bold;
+            font-family: "Arial Black", sans-serif;
+            text-shadow:
+                    0 0 25px rgb(160, 0, 255),
+                    0 0 50px rgb(160, 0, 255);
+        }
 
         > p {
             padding-left: 50px;
