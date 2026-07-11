@@ -5,39 +5,45 @@ import { observer } from "mobx-react-lite";
 import { ItemPaginationStore } from "@/stores/ItemPaginationStore";
 import {colors} from "@/styles/vars";
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
+import classNames from "classnames";
 
-const PaginationWrapper = styled.div`
+const PaginationContainer = styled.div`
 	display: flex;
 	gap: 0.5rem;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	margin-top: 1.5rem;
-`;
 
-const PageButton = styled.button<{ active?: boolean }>`
-	padding: 0.4rem 0.75rem;
-	border-radius: 0.375rem;
-	background: ${({ active }) => (active ? colors.background : "transparent")};
-	color: ${({ active }) => (active ? "white" : colors.text.secondary)};
-	border: 1px solid ${colors.border};
-	cursor: pointer;
-	font-weight: 500;
-	min-height: 40px;
+	> ._page_button {
+        padding: 0.4rem 0.75rem;
+        border-radius: 0.375rem;
+        background-color: transparent;
+        color: ${colors.text.primary};
+        border: 1px solid ${colors.border};
+        cursor: pointer;
+        font-weight: 500;
+        min-height: 40px;
+		
+		&.active {
+			background-color: ${colors.background};
+			color: ${colors.text.secondary};
+		}
 
-	&:hover {
-		background: ${colors.background};
+        &:hover {
+            background: ${colors.background};
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
 	}
-
-	&:disabled {
-		opacity: 0.4;
-		cursor: not-allowed;
+	
+	> ._ellipsis {
+        padding: 0.4rem 0.75rem;
+        color: ${colors.text.secondary};
 	}
-`;
-
-const Ellipsis = styled.span`
-	padding: 0.4rem 0.75rem;
-	color: ${colors.text.secondary};
 `;
 
 type Props = {
@@ -85,29 +91,28 @@ const Pagination = observer(({ store }: Props) => {
 	};
 
 	return (
-		<PaginationWrapper>
-			<PageButton onClick={() => prevPage()} disabled={currentPage === 0}>
+		<PaginationContainer>
+			<button className="_page_button" onClick={() => prevPage()} disabled={currentPage === 0}>
 				<FaChevronLeft />
-			</PageButton>
+			</button>
 
 			{getPageNumbers().map((page, idx) =>
 				typeof page === "number" ? (
-					<PageButton
+					<button
+						className={classNames('_page_button', {active: page === currentPage})}
 						key={idx}
-						onClick={() => setPage(page)}
-						active={page === currentPage}
-					>
+						onClick={() => setPage(page)}>
 						{page + 1}
-					</PageButton>
+					</button>
 				) : (
-					<Ellipsis key={idx}>…</Ellipsis>
+					<span className="_ellipsis" key={idx}>…</span>
 				)
 			)}
 
-			<PageButton onClick={() => nextPage()} disabled={currentPage === totalItems - 1}>
+			<button className="_page_button" onClick={() => nextPage()} disabled={currentPage === totalItems - 1}>
 				<FaChevronRight />
-			</PageButton>
-		</PaginationWrapper>
+			</button>
+		</PaginationContainer>
 	);
 });
 
