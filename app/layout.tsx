@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Noto_Sans_Display } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -10,15 +10,15 @@ import {GlobalStyle} from "@/styles/GlobalStyle";
 import StyledComponentsRegistry from "@/lib/registry";
 import PageTransition from "@/components/layout/PageTransition";
 
-const noto = Noto_Sans_Display({
+const font = Open_Sans({
 	subsets: ['latin'],
-	style: 'italic',
+	style: 'normal',
 	weight: '600',
 });
 
 export const metadata: Metadata = {
 	title: "Ninjas #4744",
-	description: "We're FIRST robotics team from Hadera",
+	description: "We're the FIRST robotics team from Hadera, Israel",
 	other: {
 		"google-site-verification": "cb8QhnaD_l9CKK1khygeTrrkyUpe-vIkrdaq-0gQZsE",
 	},
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html suppressHydrationWarning lang="en">
-			<body className={noto.className}>
+			<body className={font.className}>
 				<StyledComponentsRegistry>
 					<GlobalStyle />
 					<AppNavbar />

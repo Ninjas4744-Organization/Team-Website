@@ -43,8 +43,10 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
+  font-family: Chopsic;
   font-size: ${fontSizes.huge};
-  font-weight: bold;
+  font-weight: normal;
+  font-style: normal;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {

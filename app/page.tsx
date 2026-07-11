@@ -62,7 +62,7 @@ const Home: React.FC = () => {
 			<Hero
 				images={[
 					"/assets/robots/Peck.webp",
-					"/assets/teamPicture.webp",
+					"/assets/teamPicture2.webp",
 					"/assets/robots/Willson.webp"
 				]}
 				title="Ninjas #4744"
