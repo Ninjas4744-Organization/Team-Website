@@ -61,9 +61,10 @@ const Home: React.FC = () => {
 		<HomeWrapper>
 			<Hero
 				images={[
+					"/assets/teamPicture2026.webp",
+					"/assets/teamPicture2025.webp",
+					"/assets/robots/Turbo.webp",
 					"/assets/robots/Peck.webp",
-					"/assets/teamPicture2.webp",
-					"/assets/robots/Willson.webp"
 				]}
 				title="Ninjas #4744"
 				subtitle="We're the robotics team of Amal Hadera high school since 2013.<br/>
