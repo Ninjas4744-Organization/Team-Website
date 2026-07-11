@@ -1,5 +1,5 @@
-import Image from "next/image";
-import type {Robot} from "@/lib/types/Robot";
+import type { Robot } from "@/lib/types/Robot";
+import { RobotPageContainer, type RobotNavItem } from "@/components/robots/RobotPageContainer";
 
 interface RobotPageProps {
 	params: Promise<{
@@ -12,28 +12,32 @@ type Robots = {
 };
 
 export default async function RobotPage({ params }: RobotPageProps) {
-	const _params = await params;
-	const robotId = _params.id;
+	const { id: robotId } = await params;
 
-	const robots: Robots = (await import('@/data/robots.json')).default;
+	const robots: Robots = (await import("@/data/robots.json")).default;
 	const robot: Robot = robots[robotId];
 
 	if (!robot) {
 		return <p>Robot not found</p>;
 	}
 
-	return (
-		<main>
-			<h1>{robot.name}</h1>
-			<p><strong>Year:</strong> {robot.year}</p>
-			<p><strong>Description:</strong> {robot.description}</p>
+	const robotIds = Object.keys(robots).sort().reverse();
+	const currentIndex = robotIds.indexOf(robotId);
 
-			<Image
-				src={`/assets/robots/${robot.name}.webp`}
-				alt={`Robot ${robot.name}`}
-				width={800}
-				height={600}
-			/>
-		</main>
+	const toNavItem = (id: string): RobotNavItem => ({
+		id,
+		name: robots[id].name,
+	});
+
+	return (
+		<RobotPageContainer
+			robot={robot}
+			newerRobot={currentIndex > 0 ? toNavItem(robotIds[currentIndex - 1]) : undefined}
+			olderRobot={
+				currentIndex < robotIds.length - 1
+					? toNavItem(robotIds[currentIndex + 1])
+					: undefined
+			}
+		/>
 	);
 }

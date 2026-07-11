@@ -1,8 +1,34 @@
 {
+  "2026": {
+    "label": "2026",
+    "name": "Turbo",
+    "year": 2026,
+    "nationalRank": 6,
+    "worldRank": 166,
+    "comps": [
+      "2026 israel team practice",
+      "2026isde2",
+      "2026iscmp"
+    ],
+    "description": "Meet Turbo, a high-speed engineering marvel designed for maximum efficiency and rapid-fire scoring. This powerhouse features an innovative floor intake that expands to enlarge its high-capacity storage box, holding up to 55 balls at a time. Utilizing a precise roller-based indexer, Turbo feeds its dual-drum shooter and accelerator setup to unleash an astonishing, continuous stream of cargo at 15 to 20 balls per second. Built for elite adaptability, Turbo doesn't need a hood or a turret to be lethal - it can accurately shoot on the move from anywhere on the field, a capability that helps it lock in a staggering average of 60 points during the autonomous period alone and 320 points a game. Fast, lethal, and brilliantly optimized, Turbo is built to dominate the competition."
+  },
+  "2025_ios": {
+    "label": "2025 IOS",
+    "name": "P.E.K.K.A",
+    "year": 2025,
+    "nationalRank": 13,
+    "worldRank": -1,
+    "comps": [
+      "2025stbe"
+    ],
+    "description": "P.E.K.K.A is a robot inspired by Chill Out #1778, featuring a floor intake that feeds coral into an arm-elevator system for fast, precise reef scoring using 250 Hz odometry and 60 FPS vision filtered for close tags only. It can also collect algae from the floor or the reef through the arm and score it in the net or processor, though it has no climbing mechanism."
+  },
   "2025": {
     "label": "2025",
     "name": "Peck",
     "year": 2025,
+    "nationalRank": 15,
+    "worldRank": 318,
     "comps": [
       "2025isde2",
       "2025isde3",
@@ -14,6 +40,8 @@
     "label": "2024 IOS",
     "name": "Willson",
     "year": 2024,
+    "nationalRank": 7,
+    "worldRank": -1,
     "comps": [
       "2024isos2"
     ],
@@ -23,6 +51,8 @@
     "label": "2024",
     "name": "Toothless",
     "year": 2024,
+    "nationalRank": 46,
+    "worldRank": 1759,
     "comps": [
       "2024isde2",
       "2024isde4"
@@ -33,6 +63,8 @@
     "label": "2023",
     "name": "Bolt",
     "year": 2023,
+    "nationalRank": 48,
+    "worldRank": 1291,
     "comps": [
       "2023isde2",
       "2023isde4"
@@ -43,6 +75,8 @@
     "label": "2022",
     "name": "Pegasus",
     "year": 2022,
+    "nationalRank": 24,
+    "worldRank": 819,
     "comps": [
       "2022isde2",
       "2022isde4",
@@ -55,6 +89,8 @@
     "label": "2020",
     "name": "Mamba",
     "year": 2020,
+    "nationalRank": 43,
+    "worldRank": 983,
     "comps": [
       "2020isde2"
     ],
@@ -64,6 +100,8 @@
     "label": "2019",
     "name": "Venus",
     "year": 2019,
+    "nationalRank": 40,
+    "worldRank": 574,
     "comps": [
       "2019isde2",
       "2019isde3",
@@ -75,6 +113,8 @@
     "label": "2018",
     "name": "Aeleos",
     "year": 2018,
+    "nationalRank": 42,
+    "worldRank": 1881,
     "comps": [
       "2018isde2",
       "2018isde4",
@@ -86,6 +126,8 @@
     "label": "2017",
     "name": "Optimus",
     "year": 2017,
+    "nationalRank": 24,
+    "worldRank": 1146,
     "comps": [
       "2017isde2",
       "2017isde3",
@@ -97,6 +139,8 @@
     "label": "2016",
     "name": "Hugo",
     "year": 2016,
+    "nationalRank": 1,
+    "worldRank": 1057,
     "comps": [
       "2016ista",
       "2016new"
@@ -107,6 +151,8 @@
     "label": "2015",
     "name": "Moses",
     "year": 2015,
+    "nationalRank": 20,
+    "worldRank": 1293,
     "comps": [
       "2015ista"
     ],
@@ -116,6 +162,8 @@
     "label": "2014",
     "name": "Alpha",
     "year": 2014,
+    "nationalRank": 25,
+    "worldRank": 1876,
     "comps": [
       "2014ista"
     ],
@@ -125,6 +173,8 @@
     "label": "2013",
     "name": "Rocky",
     "year": 2013,
+    "nationalRank": 20,
+    "worldRank": 1156,
     "comps": [
       "2013ista"
     ],
