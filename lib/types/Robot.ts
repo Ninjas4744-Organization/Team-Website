@@ -4,6 +4,8 @@ export type Robot = {
 	description: string;
 	comps: string[];
 	label: string;
+	nationalRank: number;
+	worldRank: number;
 };
 
 export type RobotItem = Robot & {
