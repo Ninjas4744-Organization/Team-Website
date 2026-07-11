@@ -18,11 +18,8 @@ import elhayPicture from "@/public/assets/people/ElhayPicture2.png";
 import tzufPicture from "@/public/assets/people/TzufPicture3.png";
 import eitanPicture from "@/public/assets/people/EitanPicture.png";
 import yaroslavaPicture from "@/public/assets/people/YaroslavaPicture.png";
-import orianPicture from "@/public/assets/people/OrianPicture2.png";
 // Mentors
-import etaiPicture from "@/public/assets/people/EtaiPicture2.png";
 import kfirPicture from "@/public/assets/people/KfirPicture.png";
-import pachaPicture from "@/public/assets/people/PachaPicture.png";
 import shaiPicture from "@/public/assets/people/ShaiPicture.png";
 import talPicture from "@/public/assets/people/TalPicture2.png";
 import blankPicture from "@/public/assets/people/blankPicture.png";

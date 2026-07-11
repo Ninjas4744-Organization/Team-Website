@@ -68,13 +68,19 @@ export const SponsorPopover = () => {
 	};
 
 	useEffect(() => {
-		const handleClickOutside = (event: any) => {
+		const handleClickOutside = (event: MouseEvent) => {
+			const target = event.target;
+			if (!(target instanceof Node)) {
+				return;
+			}
+
 			if (
 				popoverRef.current &&
-				!popoverRef.current.contains(event.target) &&
-				!triggerRef.current!.contains(event.target)
+				!popoverRef.current.contains(target) &&
+				triggerRef.current &&
+				!triggerRef.current.contains(target)
 			) {
-				setIsVisible(false); // Close the popover if clicked outside
+				setIsVisible(false);
 			}
 		};
 

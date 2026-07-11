@@ -1,12 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import {useEffect, useMemo} from "react";
+import { Children, isValidElement, useEffect, useMemo } from "react";
 import Pagination from "@/components/Pagination";
-import {ItemPaginationStore} from "@/stores/ItemPaginationStore";
-import {observer} from 'mobx-react-lite';
+import { ItemPaginationStore } from "@/stores/ItemPaginationStore";
+import { observer } from "mobx-react-lite";
 import styled from "styled-components";
-import {mQuery} from "@/styles/vars";
+import { mQuery } from "@/styles/vars";
 
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
@@ -14,7 +14,7 @@ const swipePower = (offset: number, velocity: number) => {
 };
 
 interface CarouselProps {
-	children: React.ReactNode[];
+	children: React.ReactNode;
 }
 
 const CarouselContainer = styled.div`
@@ -23,31 +23,43 @@ const CarouselContainer = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	gap: 0.5rem;
-	
+
 	${mQuery.mobile} {
 		display: none;
 	}
-	
+
 	> ._card {
 		transition-duration: 200ms;
 	}
 `;
+
+function getSlideSignature(children: React.ReactNode): string {
+	return Children.toArray(children)
+		.map((child, index) => (isValidElement(child) ? child.key ?? index : index))
+		.join("|");
+}
+
 const Carousel: React.FC<CarouselProps> = observer(({ children }) => {
-	const itemPaginationStore = useMemo(() => new ItemPaginationStore(), []);
-	const {setItems, currentPage, nextPage, prevPage} = itemPaginationStore;
+	const itemPaginationStore = useMemo(
+		() => new ItemPaginationStore<React.ReactNode>(),
+		[],
+	);
+	const slideSignature = getSlideSignature(children);
+	const childItems = Children.toArray(children);
+	const { currentPage, nextPage, prevPage } = itemPaginationStore;
 
 	useEffect(() => {
-		setItems(children);
-	}, []);
+		itemPaginationStore.setItems(childItems);
+	}, [itemPaginationStore, slideSignature]);
 
 	return (
 		<CarouselContainer>
-			<AnimatePresence mode='wait'>
+			<AnimatePresence mode="wait">
 				<motion.div
 					key={currentPage}
 					className="_card"
 					animate={{ x: 0, opacity: 1 }}
-					drag='x'
+					drag="x"
 					dragConstraints={{ left: 0, right: 0 }}
 					dragElastic={1}
 					exit={{ x: -300, opacity: 0 }}
@@ -60,8 +72,9 @@ const Carousel: React.FC<CarouselProps> = observer(({ children }) => {
 						} else if (swipe > swipeConfidenceThreshold) {
 							prevPage();
 						}
-					}}>
-					{children[currentPage]}
+					}}
+				>
+					{childItems[currentPage]}
 				</motion.div>
 			</AnimatePresence>
 

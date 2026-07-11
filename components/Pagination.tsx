@@ -47,7 +47,7 @@ const PaginationContainer = styled.div`
 `;
 
 type Props = {
-	store: ItemPaginationStore<any>;
+	store: ItemPaginationStore<unknown>;
 };
 
 const Pagination = observer(({ store }: Props) => {

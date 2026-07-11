@@ -22,7 +22,7 @@ type LayoutProps = {
 	children: React.ReactNode;
 }
 
-export default async function({children}: LayoutProps) {
+export default async function RobotLayout({children}: LayoutProps) {
 	return (
 		<>
 			<Tabs baseRoute="/robots" data={robots} />

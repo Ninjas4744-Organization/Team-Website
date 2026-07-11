@@ -69,11 +69,15 @@ export const Hero: FC<HeroProps> = ({images, title, subtitle}) => {
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
+		if (images.length === 0) {
+			return;
+		}
+
 		const interval = setInterval(() => {
 			setIndex((i) => (i + 1) % images.length);
 		}, 5000);
 		return () => clearInterval(interval);
-	}, []);
+	}, [images.length]);
 
 	return (
 		<Wrapper>
