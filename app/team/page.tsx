@@ -25,6 +25,7 @@ import kfirPicture from "@/public/assets/people/KfirPicture.png";
 import pachaPicture from "@/public/assets/people/PachaPicture.png";
 import shaiPicture from "@/public/assets/people/ShaiPicture.png";
 import talPicture from "@/public/assets/people/TalPicture2.png";
+import blankPicture from "@/public/assets/people/blankPicture.png";
 import ImageCard from "@/components/home/ImageCard";
 import styled from "styled-components";
 import {Hero} from "@/components/ui/Hero";
@@ -84,29 +85,25 @@ const TeamPageContainer = styled.div`
 const TeamPage = () => {
 	// Define team leads and mentors data
 	const teamLeads = [
-		{ name: "Elhay Journo", role: "Outreach", image: elhayPicture },
-		{ name: "Eitan Grimblat", role: "Software", image: eitanPicture },
-		{ name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
 		{ name: "Yaroslava Avdeev", role: "Mechanics", image: yaroslavaPicture },
-		{ name: "Orian Scripcaru", role: "Electronics", image: orianPicture },
+		{ name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
+		{ name: "Eitan Grimblat", role: "Software", image: eitanPicture },
+		{ name: "Elhay Journo", role: "Electronics", image: elhayPicture },
 	];
 
 	const mentors = [
-		{ name: "Ido Shoshani", role: "Strategy", image: shaiPicture },
-		{ name: "Michal Amsalem", role: "Mechanics", image: shaiPicture },
-		{ name: "Dudu Chili", role: "Electronics", image: shaiPicture },
-		{ name: "Shai Leib", role: "Mechanics", image: shaiPicture },
-		{ name: "Etai Rachmilov", role: "Lead mentor", image: etaiPicture },
+		{ name: "Ido Shoshani", role: "Strategy", image: blankPicture },
+		{ name: "Guy Pacha", role: "Strategy", image: blankPicture },
+		{ name: "Shai Leib", role: "Lead Mentor & Mechanics", image: shaiPicture },
 		{ name: "Tal Ben Amram", role: "Software", image: talPicture },
-		{ name: "Jacob Nazarov", role: "CAD", image: shaiPicture },
 		{ name: "Kfir Nevo", role: "Software & Community", image: kfirPicture },
-		{ name: "Guy Pacha", role: "CAD", image: pachaPicture },
+		{ name: "Jacob Nazarov", role: "CAD", image: blankPicture },
 	];
 
 	return (
 		<TeamPageContainer>
 			<Hero
-				images={['/assets/teamPicture2.webp']}
+				images={['/assets/teamPicture2026.webp']}
 				title="Ninjas #4744"
 				subtitle="Team" />
 			<div className="_section">
