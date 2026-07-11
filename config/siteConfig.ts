@@ -2,16 +2,16 @@ export type siteConfigProps = typeof siteConfig;
 const siteConfig = {
 	navLinks: [
 		{
-			title: "Home",
-			href: "/",
-		},
-		{
 			title: "Team",
 			href: "/team",
 		},
 		{
 			title: "Robots",
 			href: "/robots",
+		},
+		{
+			title: "Gallery",
+			href: "/gallery",
 		},
 	],
 	siteLinks: {

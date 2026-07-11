@@ -13,7 +13,6 @@ import {IconButton} from "@/components/ui/IconButton";
 import styled from "styled-components";
 import {colors, fontSizes} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
-import {NavLinks} from "@/components/NavLinks";
 
 const FooterContainer = styled.div`
 	position: sticky;
@@ -66,7 +65,6 @@ const AppFooter: React.FC = () => {
 			<div className="_container">
 				<div className="_nav">
 					<Image alt='Ninjas Logo' height={40} src={NinjasLogo} width={40}/>
-					<NavLinks/>
 				</div>
 				<Separator/>
 				<div className="_lower">

@@ -7,6 +7,7 @@ import Carousel from "@/components/ui/Carousel";
 import CarouselCard from "@/components/ui/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
 import {TeamHighlights} from "@/components/home/TeamHighlights";
+import {FirstSection} from "@/components/home/FirstSection";
 import styled from "styled-components";
 import {colors, fontSizes} from "@/styles/vars";
 import {Hero} from "@/components/ui/Hero";
@@ -70,6 +71,7 @@ const Home: React.FC = () => {
 				subtitle="We're the robotics team of Amal Hadera high school since 2013.<br/>
 					We're a passionate robotics team competing in FIRST. With creativity, innovation, and teamwork, we build more than robots – we build future leaders." />
 			<TeamHighlights/>
+			<FirstSection />
 			<SponsorsWrapper>
 				<h2 className="_title">Our supporters</h2>
 				<p className="_subtitle">Key companies who provide us everything we need</p>

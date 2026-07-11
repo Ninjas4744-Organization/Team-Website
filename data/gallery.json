@@ -1,0 +1,87 @@
+[
+	{
+		"year": 2026,
+		"src": "/assets/teamPicture2026.webp",
+		"alt": "Ninjas #4744 team photo, 2026"
+	},
+	{
+		"year": 2026,
+		"src": "/assets/robots/Turbo.webp",
+		"alt": "Turbo robot, 2026 season"
+	},
+	{
+		"year": 2025,
+		"src": "/assets/teamPicture2025.webp",
+		"alt": "Ninjas #4744 team photo, 2025"
+	},
+	{
+		"year": 2025,
+		"src": "/assets/robots/Peck.webp",
+		"alt": "Peck robot, 2025 season"
+	},
+	{
+		"year": 2025,
+		"src": "/assets/robots/P.E.K.K.A.webp",
+		"alt": "P.E.K.K.A robot, 2025 off-season"
+	},
+	{
+		"year": 2024,
+		"src": "/assets/robots/Toothless.webp",
+		"alt": "Toothless robot, 2024 season"
+	},
+	{
+		"year": 2024,
+		"src": "/assets/robots/Willson.webp",
+		"alt": "Willson robot, 2024 off-season"
+	},
+	{
+		"year": 2023,
+		"src": "/assets/robots/Bolt.webp",
+		"alt": "Bolt robot, 2023 season"
+	},
+	{
+		"year": 2022,
+		"src": "/assets/robots/Pegasus.webp",
+		"alt": "Pegasus robot, 2022 season"
+	},
+	{
+		"year": 2020,
+		"src": "/assets/robots/Mamba.webp",
+		"alt": "Mamba robot, 2020 season"
+	},
+	{
+		"year": 2019,
+		"src": "/assets/robots/Venus.webp",
+		"alt": "Venus robot, 2019 season"
+	},
+	{
+		"year": 2018,
+		"src": "/assets/robots/Aeleos.webp",
+		"alt": "Aeleos robot, 2018 season"
+	},
+	{
+		"year": 2017,
+		"src": "/assets/robots/Optimus.webp",
+		"alt": "Optimus robot, 2017 season"
+	},
+	{
+		"year": 2016,
+		"src": "/assets/robots/Hugo.webp",
+		"alt": "Hugo robot, 2016 season"
+	},
+	{
+		"year": 2015,
+		"src": "/assets/robots/Moses.webp",
+		"alt": "Moses robot, 2015 season"
+	},
+	{
+		"year": 2014,
+		"src": "/assets/robots/Alpha.webp",
+		"alt": "Alpha robot, 2014 season"
+	},
+	{
+		"year": 2013,
+		"src": "/assets/robots/Rocky.webp",
+		"alt": "Rocky robot, 2013 season"
+	}
+]

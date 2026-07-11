@@ -11,10 +11,10 @@ import TBAIcon from "./TBAIcon";
 import NinjasLogo from "@/public/assets/NinjasLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
-import {SponsorPopover} from "@/components/SponsorPopover";
 import {colors, fontSizes, mQuery} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
 import {NavLinks} from "@/components/NavLinks";
+import { FaHeart } from "react-icons/fa";
 
 interface MenuToggleProps {
 	onClick: () => void;
@@ -130,6 +130,24 @@ const MobileMenuStyle = styled.div`
 	}
 `;
 
+const SponsorLink = styled(NextLink)`
+	border: 1px solid ${colors.border};
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.75rem;
+	gap: 0.5rem;
+	box-sizing: border-box;
+	line-height: 1.25rem;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		background-color: ${colors.border};
+	}
+`;
+
 const AppNavbar: React.FC = () => {
 	const [isMenuOpen, setMenuIsOpen] = useState<boolean>(false);
 
@@ -170,7 +188,10 @@ const AppNavbar: React.FC = () => {
 							<TBAIcon />
 						</IconButton>
 					</NextLink>
-					<SponsorPopover />
+					<SponsorLink href={siteConfig.siteLinks.sponsors}>
+						<FaHeart color="#dc2626" />
+						Sponsor
+					</SponsorLink>
 				</div>
 			</div>
 
@@ -188,6 +209,9 @@ const AppNavbar: React.FC = () => {
 									{item.title}
 								</NextLink>
 							))}
+							<NextLink className="_link" href={siteConfig.siteLinks.sponsors} onClick={() => setMenuIsOpen(false)}>
+								Sponsor
+							</NextLink>
 						</div>
 					</MobileMenuStyle>
 				</motion.div>
