@@ -1,0 +1,45 @@
+name: Update TBA event names
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-tba-events-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-event-names:
+    name: Fetch missing event names
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch uncached event names
+        env:
+          TBA_AUTH_KEY: ${{ secrets.TBA_AUTH_KEY }}
+        run: npm run events:update-missing
+
+      - name: Commit updated event names
+        run: |
+          if git diff --quiet -- data/tba-events.json; then
+            echo "No new event names to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tba-events.json
+          git commit -m "chore: update TBA event names"
+          git push
