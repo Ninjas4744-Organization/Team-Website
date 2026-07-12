@@ -2,11 +2,14 @@
   "name": "ninjasweb",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "bun x eslint . --ext .ts,.tsx",
+    "lint": "eslint .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -17,10 +20,10 @@
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
     "motion": "^11.18.1",
-    "next": "15.3.8",
+    "next": "16.2.10",
     "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-icons": "^5.4.0",
     "styled-components": "^6.1.19"
   },
@@ -32,8 +35,8 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.29.1",
     "@typescript-eslint/parser": "^8.29.1",
-    "eslint": "8",
-    "eslint-config-next": "^15.2.5",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.10",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
