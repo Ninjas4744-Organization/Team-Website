@@ -1,5 +1,6 @@
-import type { Robot } from "@/lib/types/Robot";
 import { RobotPageContainer, type RobotNavItem } from "@/components/robots/RobotPageContainer";
+import { notFound } from 'next/navigation';
+import { robotEntries, robotIds } from '@/lib/robots';
 
 interface RobotPageProps {
 	params: Promise<{
@@ -7,31 +8,27 @@ interface RobotPageProps {
 	}>;
 }
 
-type Robots = {
-	[key: string]: Robot;
-};
+export function generateStaticParams() {
+	return robotIds.map((id) => ({ id }));
+}
 
 export default async function RobotPage({ params }: RobotPageProps) {
 	const { id: robotId } = await params;
+	const entry = robotEntries[robotId];
+	if (!entry) notFound();
 
-	const robots: Robots = (await import("@/data/robots.json")).default;
-	const robot: Robot = robots[robotId];
-
-	if (!robot) {
-		return <p>Robot not found</p>;
-	}
-
-	const robotIds = Object.keys(robots).sort().reverse();
+	const { robot, Content } = entry;
 	const currentIndex = robotIds.indexOf(robotId);
 
 	const toNavItem = (id: string): RobotNavItem => ({
 		id,
-		name: robots[id].name,
+		name: robotEntries[id].robot.name,
 	});
 
 	return (
 		<RobotPageContainer
 			robot={robot}
+			content={<Content />}
 			newerRobot={currentIndex > 0 ? toNavItem(robotIds[currentIndex - 1]) : undefined}
 			olderRobot={
 				currentIndex < robotIds.length - 1

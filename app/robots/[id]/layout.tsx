@@ -1,16 +1,16 @@
 import {Tabs} from "@/components/ui/Tabs";
 import {Metadata} from "next";
-import robots from "@/data/robots.json";
-import type {Robot} from "@/lib/types/Robot";
+import { notFound } from 'next/navigation';
+import { getRobotTabs, robotEntries } from '@/lib/robots';
 
 type RobotPageProps = {
-	id: keyof typeof robots;
+	id: string;
 }
 
 export async function generateMetadata({ params }: { params: Promise<RobotPageProps> }): Promise<Metadata> {
 	const {id} = await params;
-	const {default: robots} = await import('@/data/robots.json');
-	const robot: Robot = robots[id];
+	const robot = robotEntries[id]?.robot;
+	if (!robot) notFound();
 
 	return {
 		title: `${robot.label} | Ninjas #4744`,
@@ -25,7 +25,7 @@ type LayoutProps = {
 export default async function RobotLayout({children}: LayoutProps) {
 	return (
 		<>
-			<Tabs baseRoute="/robots" data={robots} />
+			<Tabs baseRoute="/robots" data={getRobotTabs()} />
 			{children}
 		</>
 	);

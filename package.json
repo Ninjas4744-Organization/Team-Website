@@ -10,10 +10,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "events:update": "node scripts/update-tba-events.mjs",
+    "events:update-missing": "node scripts/update-tba-events.mjs --if-missing",
+    "events:check": "node scripts/update-tba-events.mjs --check",
     "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.2.10",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "classnames": "^2.5.1",
