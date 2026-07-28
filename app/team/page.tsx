@@ -94,12 +94,12 @@ const TeamPage = () => {
 	];
 
 	const mentors = [
-		{ name: "Ido Shoshani", role: "Strategy", image: blankPicture },
-		{ name: "Guy Pacha", role: "Strategy", image: blankPicture },
-		{ name: "Shai Leib", role: "Lead Mentor & Mechanics", image: shaiPicture },
-		{ name: "Tal Ben Amram", role: "Software", image: talPicture },
-		{ name: "Kfir Nevo", role: "Software & Community", image: kfirPicture },
-		{ name: "Jacob Nazarov", role: "CAD", image: blankPicture },
+		{ id: "ido-shoshani", name: "Ido Shoshani", role: "Strategy", image: blankPicture },
+		{ id: "guy-pacha", name: "Guy Pacha", role: "Strategy", image: blankPicture },
+		{ id: "shai-leib", name: "Shai Leib", role: "Lead Mentor & Mechanics", image: shaiPicture },
+		{ id: "tal-ben-amram", name: "Tal Ben Amram", role: "Software", image: talPicture },
+		{ id: "kfir-nevo", name: "Kfir Nevo", role: "Software & Community", image: kfirPicture },
+		{ id: "jacob-nazarov", name: "Jacob Nazarov", role: "CAD", image: blankPicture },
 	];
 
 	return (
@@ -114,9 +114,19 @@ const TeamPage = () => {
 					<p className="_subtitle">Meet our mentors</p>
 				</div>
 				<div className="_cards">
-					{mentors.map((item, index) => (
-						<ImageCard key={index} image={item.image} name={item.name} role={item.role} />
-					))}
+					{mentors.map((item) => {
+						const easterEgg = getTeamEasterEgg(item.id);
+
+						return (
+							<ImageCard
+								key={item.id}
+								image={item.image}
+								name={item.name}
+								role={item.role}
+								onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
+							/>
+						);
+					})}
 				</div>
 			</div>
 			<div className="_section">
