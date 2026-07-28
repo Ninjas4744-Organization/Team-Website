@@ -67,6 +67,7 @@ const TeamPageContainer = styled.div`
 		
 		> ._cards {
 			display: flex;
+			flex-wrap: wrap;
 			flex-direction: row;
 			gap: 1.25rem;
 			
