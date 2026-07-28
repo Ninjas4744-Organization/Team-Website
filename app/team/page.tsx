@@ -13,6 +13,8 @@
 
 "use client";
 
+import { useRouter } from "next/navigation";
+
 // Leads
 import elhayPicture from "@/public/assets/people/ElhayPicture2.png";
 import tzufPicture from "@/public/assets/people/TzufPicture3.png";
@@ -26,6 +28,7 @@ import blankPicture from "@/public/assets/people/blankPicture.png";
 import ImageCard from "@/components/home/ImageCard";
 import styled from "styled-components";
 import {Hero} from "@/components/ui/Hero";
+import { getTeamEasterEgg } from "@/lib/teamEasterEggs";
 import {colors, fontSizes, mQuery} from "@/styles/vars";
 
 const TeamPageContainer = styled.div`
@@ -81,12 +84,13 @@ const TeamPageContainer = styled.div`
 	}
 `;
 const TeamPage = () => {
+	const router = useRouter();
 	// Define team leads and mentors data
 	const teamLeads = [
-		{ name: "Yaroslava Avdeev", role: "Mechanics", image: yaroslavaPicture },
-		{ name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
-		{ name: "Eitan Grimblat", role: "Software", image: eitanPicture },
-		{ name: "Elhay Journo", role: "Electronics", image: elhayPicture },
+		{ id: "yaroslava-avdeev", name: "Yaroslava Avdeev", role: "Mechanics", image: yaroslavaPicture },
+		{ id: "tzuf-ben-yehuda", name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
+		{ id: "eitan-grimblat", name: "Eitan Grimblat", role: "Software", image: eitanPicture },
+		{ id: "elhay-journo", name: "Elhay Journo", role: "Electronics", image: elhayPicture },
 	];
 
 	const mentors = [
@@ -121,9 +125,19 @@ const TeamPage = () => {
 					<p className="_subtitle">Meet our team leaders</p>
 				</div>
 				<div className="_cards">
-					{teamLeads.map((item, index) => (
-						<ImageCard key={index} image={item.image} name={item.name} role={item.role} />
-					))}
+					{teamLeads.map((item) => {
+						const easterEgg = getTeamEasterEgg(item.id);
+
+						return (
+							<ImageCard
+								key={item.id}
+								image={item.image}
+								name={item.name}
+								role={item.role}
+								onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</TeamPageContainer>

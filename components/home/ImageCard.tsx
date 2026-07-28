@@ -9,7 +9,7 @@ export interface ImageCardProps extends HTMLAttributes<HTMLDivElement> {
 	role: string;
 }
 
-const ImageCardContainer = styled.div`
+const ImageCardContainer = styled.div<{ $interactive: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +17,21 @@ const ImageCardContainer = styled.div`
 	gap: 0.5rem;
 	flex: 1;
 	box-sizing: border-box;
+	transition: transform 150ms ease;
+
+	${({ $interactive }) => $interactive && `
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(-0.25rem);
+		}
+
+		&:focus-visible {
+			outline: 3px solid ${colors.accent};
+			outline-offset: 0.5rem;
+			border-radius: 0.5rem;
+		}
+	`}
 	
 	> ._image {
         background-color: ${colors.accent_background};
@@ -58,9 +73,23 @@ const ImageCardContainer = styled.div`
 	}
 `;
 
-const ImageCard: React.FC<ImageCardProps> = ({ image, name, role }) => {
+const ImageCard: React.FC<ImageCardProps> = ({ image, name, role, onClick, ...props }) => {
+	const interactive = Boolean(onClick);
+
 	return (
-		<ImageCardContainer>
+		<ImageCardContainer
+			{...props}
+			$interactive={interactive}
+			onClick={onClick}
+			role={interactive ? "button" : undefined}
+			tabIndex={interactive ? 0 : undefined}
+			onKeyDown={(event) => {
+				if (interactive && (event.key === "Enter" || event.key === " ")) {
+					event.preventDefault();
+					event.currentTarget.click();
+				}
+			}}
+		>
 			<div className="_image">
 				<Image alt={`${name}-${role}`} draggable={"false"} src={image} />
 			</div>
