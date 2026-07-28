@@ -1,19 +1,20 @@
 import { notFound } from "next/navigation";
 import MemberDialog from "@/components/team/MemberDialog";
-import { getTeamEasterEgg } from "@/lib/teamEasterEggs";
+import { getTeamEasterEgg, isBirthdayToday } from "@/lib/teamEasterEggs";
+import {Metadata} from "next";
+
+export const dynamic = "force-dynamic";
 
 type EasterEggPageProps = {
 	params: Promise<{ member: string }>;
 };
 
-export async function generateMetadata({ params }: EasterEggPageProps) {
+export async function generateMetadata({ params }: EasterEggPageProps): Promise<Metadata> {
 	const { member } = await params;
 	const easterEgg = getTeamEasterEgg(member);
 	if (!easterEgg) notFound();
 
-	const isBirthday = easterEgg.birthday &&
-		new Date().getMonth() === easterEgg.birthday.month - 1 &&
-		new Date().getDate() === easterEgg.birthday.day;
+	const isBirthday = isBirthdayToday(easterEgg.birthday);
 
 	return {
 		title: isBirthday ? `Happy birthday ${easterEgg.memberName}!` : `${easterEgg.memberName} | Ninjas #4744`,
