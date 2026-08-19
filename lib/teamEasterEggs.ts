@@ -29,6 +29,12 @@ const teamEasterEggs: Record<string, TeamEasterEgg> = {
 		image: "/assets/easter-eggs/kfir.webp",
 		birthday: { month: 9, day: 21 },
 	},
+	"elhay-journo": {
+		memberId: "elhay-journo",
+		memberName: "Elhay",
+		image: "/assets/easter-eggs/elhay.gif",
+		birthday: { month: 8, day: 19 },
+	},
 };
 
 export function getTeamEasterEgg(memberId: string) {
