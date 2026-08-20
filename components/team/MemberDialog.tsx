@@ -31,14 +31,21 @@ export default function MemberDialog({ member }: MemberProps) {
 			<div className="_content">
 				<Link className="_close" href="/team" aria-label="Close Easter egg">×</Link>
 				<h2 id="easter-egg-title" className="_title">{title}</h2>
-				<Image
-					className="_image"
-					src={member.image}
-					alt={`${member.memberName}'s Easter egg`}
-					width={250}
-					height={250}
-					unoptimized
-				/>
+				{member.mediaType === "video" ? (
+					<video className="_video" autoPlay controls playsInline preload="auto">
+						<source src={member.media} type="video/mp4" />
+						Your browser does not support video playback.
+					</video>
+				) : (
+					<Image
+						className="_image"
+						src={member.media}
+						alt={`${member.memberName}'s Easter egg`}
+						width={250}
+						height={250}
+						unoptimized
+					/>
+				)}
 			</div>
 		</MemberDialogShell>
 	);

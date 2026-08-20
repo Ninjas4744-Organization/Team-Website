@@ -6,7 +6,8 @@ export type Birthday = {
 export type TeamEasterEgg = {
 	memberId: string;
 	memberName: string;
-	image: string;
+	media: string;
+	mediaType: "image" | "video";
 	birthday?: Birthday;
 };
 
@@ -14,26 +15,37 @@ const teamEasterEggs: Record<string, TeamEasterEgg> = {
 	"eitan-grimblat": {
 		memberId: "eitan-grimblat",
 		memberName: "Eitan",
-		image: "/assets/easter-eggs/eitan.webp",
+		media: "/assets/easter-eggs/eitan.webp",
+		mediaType: "image",
 		birthday: { month: 7, day: 28 },
 	},
 	"tal-ben-amram": {
 		memberId: "tal-ben-amram",
 		memberName: "Tal",
-		image: "/assets/easter-eggs/tal.webp",
+		media: "/assets/easter-eggs/tal.webp",
+		mediaType: "image",
 		birthday: { month: 2, day: 19 },
 	},
 	"kfir-nevo": {
 		memberId: "kfir-nevo",
 		memberName: "Kfir",
-		image: "/assets/easter-eggs/kfir.webp",
+		media: "/assets/easter-eggs/kfir.webp",
+		mediaType: "image",
 		birthday: { month: 9, day: 21 },
 	},
 	"elhay-journo": {
 		memberId: "elhay-journo",
 		memberName: "Elhay",
-		image: "/assets/easter-eggs/elhay.gif",
+		media: "/assets/easter-eggs/elhay.gif",
+		mediaType: "image",
 		birthday: { month: 8, day: 19 },
+	},
+	"gavriel-ilizirov": {
+		memberId: "gavriel-ilizirov",
+		memberName: "Gavriel",
+		media: "/assets/easter-eggs/gavriel.mp4",
+		mediaType: "video",
+		birthday: { month: 8, day: 20 },
 	},
 };
 

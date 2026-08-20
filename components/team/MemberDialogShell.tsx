@@ -92,6 +92,13 @@ const Shell = styled.div`
 			height: auto;
 			border-radius: 0.75rem;
 		}
+
+		> ._video {
+			width: min(100%, 19rem);
+			max-height: 55vh;
+			border-radius: 0.75rem;
+			background: #000;
+		}
 	}
 `;
 
