@@ -35,7 +35,7 @@ function Li({ children }: { children: React.ReactNode }) {
 
 export default function PrivacyPolicyPage() {
 	const lastUpdated = "February 10, 2026";
-	const teamName = "Ninjas 4744";
+	const teamName = "Da Vinci 4744";
 	const contactEmail = "me@kfiros.com";
 
 	return (

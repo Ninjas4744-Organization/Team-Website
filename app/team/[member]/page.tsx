@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: EasterEggPageProps): Promise<
 	const isBirthday = isBirthdayToday(easterEgg.birthday);
 
 	return {
-		title: isBirthday ? `Happy birthday ${easterEgg.memberName}!` : `${easterEgg.memberName} | Ninjas #4744`,
+		title: isBirthday ? `Happy birthday ${easterEgg.memberName}!` : `${easterEgg.memberName} | Da Vinci 4744`,
 		description: easterEgg.memberName,
 	};
 }

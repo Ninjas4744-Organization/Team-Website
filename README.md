@@ -1,4 +1,4 @@
-# Ninjas 4744 - Team Website
+# Da Vinci 4744 - Team Website
 
 ## Setting up a development environment
 1. Install [Bun](https://bun.com/) (1.2.x) if you don't have it already

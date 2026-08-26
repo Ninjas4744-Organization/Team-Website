@@ -17,7 +17,7 @@ const font = Open_Sans({
 });
 
 export const metadata: Metadata = {
-	title: "Ninjas #4744",
+	title: "Da Vinci 4744",
 	description: "We're the FIRST robotics team from Hadera, Israel",
 	other: {
 		"google-site-verification": "cb8QhnaD_l9CKK1khygeTrrkyUpe-vIkrdaq-0gQZsE",

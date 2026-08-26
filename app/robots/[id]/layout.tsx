@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<RobotPagePr
 	if (!robot) notFound();
 
 	return {
-		title: `${robot.label} | Ninjas #4744`,
-		description: `Details about robot ${robot.name} by Ninjas #4744.`,
+		title: `${robot.label} | Da Vinci 4744`,
+		description: `Details about robot ${robot.name} by Da Vinci 4744.`,
 	};
 }
 
