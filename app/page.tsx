@@ -3,6 +3,8 @@
 import Image from "next/image";
 import React from "react";
 
+import DaVinciHeroTitle from "@/public/assets/DaVinciHeroTitleOneLine.png";
+
 import Carousel from "@/components/ui/Carousel";
 import CarouselCard from "@/components/ui/CarouselCard";
 import Sponsors from "@/constants/Sponsors";
@@ -67,7 +69,7 @@ const Home: React.FC = () => {
 					"/assets/robots/Turbo.webp",
 					"/assets/robots/Peck.webp",
 				]}
-				title="Ninjas #4744"
+				title={<Image alt="Da Vinci 4744" className="_wordmark" priority src={DaVinciHeroTitle} />}
 				subtitle="We're the robotics team of Amal Hadera high school since 2013.<br/>
 					We're a passionate robotics team competing in FIRST. With creativity, innovation, and teamwork, we build more than robots – we build future leaders." />
 			<TeamHighlights/>

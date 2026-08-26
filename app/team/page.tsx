@@ -1,7 +1,7 @@
 /**
  * Page Component
  *
- * This component represents the main page for the Ninjas #4744 team. It displays
+ * This component represents the main page for the Da Vinci 4744 team. It displays
  * a hero section with the team’s picture and titles, followed by sections for Mentors
  * and Team Leads.
  *
@@ -13,6 +13,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 // Leads
@@ -30,6 +31,7 @@ import styled from "styled-components";
 import {Hero} from "@/components/ui/Hero";
 import { getTeamEasterEgg } from "@/lib/teamEasterEggs";
 import {colors, fontSizes, mQuery} from "@/styles/vars";
+import DaVinciHeroTitle from "@/public/assets/DaVinciHeroTitleOneLine.png";
 
 const TeamPageContainer = styled.div`
 	max-width: 100%;
@@ -106,7 +108,7 @@ const TeamPage = () => {
 		<TeamPageContainer>
 			<Hero
 				images={['/assets/teamPicture2026.webp']}
-				title="Ninjas #4744"
+				title={<Image alt="Da Vinci 4744" className="_wordmark" priority src={DaVinciHeroTitle} />}
 				subtitle="Team" />
 			<div className="_section">
 				<div className="_titles">
