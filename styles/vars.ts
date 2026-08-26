@@ -1,11 +1,19 @@
 export const colors = {
-	border: '#27272b',
-	background: '#18181b',
-	accent_background: '#1a202c',
-	accent: '#3b82f6',
+	background: '#627A8B',
+	surface: '#405B6D',
+	surfaceRaised: '#4C687B',
+	accent_background: '#314B5D',
+	border: 'rgba(241, 247, 249, 0.26)',
+	borderStrong: 'rgba(248, 251, 252, 0.48)',
+	accent: '#AFC7D3',
+	accentHover: '#E4F1F6',
+	accentSoft: 'rgba(175, 199, 211, 0.18)',
+	shadow: 'rgba(22, 38, 49, 0.32)',
+	overlay: 'rgba(20, 37, 48, 0.68)',
 	text: {
 		primary: '#ffffff',
-		secondary: '#a1a1aa',
+		secondary: '#E7F0F4',
+		onAccent: '#243F4E',
 	}
 };
 

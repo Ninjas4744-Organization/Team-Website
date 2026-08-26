@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 const AccordionContainer = styled.div`
 	border: 1px solid ${colors.border};
-	border-radius: 8px;
+	border-radius: 14px;
 	overflow: hidden;
 	margin-bottom: 12px;
 	
@@ -15,7 +15,7 @@ const AccordionContainer = styled.div`
 	}
 	
 	> ._header {
-        background-color: ${colors.background};
+		background-color: ${colors.surface};
         padding: 16px;
         width: 100%;
         display: flex;
@@ -26,19 +26,21 @@ const AccordionContainer = styled.div`
         font-weight: bold;
         font-size: 16px;
         outline: none;
-        transition: background-color 0.2s;
+		color: ${colors.text.primary};
+		transition: background-color 180ms ease, color 180ms ease;
 		
 		&.isOpen {
-			background-color: ${colors.border};
+			background-color: ${colors.accentSoft};
+			color: ${colors.accentHover};
 		}
 	}
 	
 	> ._content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+		transition: max-height 300ms ease, padding 300ms ease;
         padding: 0 16px;
-        background-color: ${colors.background};
+		background-color: ${colors.surface};
 		
 		&.isOpen {
 			max-height: 500px;

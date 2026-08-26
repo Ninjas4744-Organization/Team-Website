@@ -7,7 +7,7 @@ import {FaFacebookF, FaGithub, FaInstagram} from "react-icons/fa";
 
 import TBAIcon from "./TBAIcon";
 
-import NinjasLogo from "@/public/assets/NinjasLogo.svg";
+import DaVinciLogo from "@/public/assets/DaVinciLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import {IconButton} from "@/components/ui/IconButton";
 import styled from "styled-components";
@@ -15,15 +15,16 @@ import {colors, fontSizes} from "@/styles/vars";
 import {Separator} from "@/components/ui/Separator";
 
 const FooterContainer = styled.div`
-	position: sticky;
-	z-index: 1;
+	margin-top: 2rem;
+	border-top: 1px solid ${colors.border};
+	background: ${colors.accent_background};
 
 	._container {
-		max-width: 100%;
-		padding: 1rem;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 1.75rem 1rem;
 		justify-content: center;
 		align-items: center;
-		background-color: ${colors.background};
 		display: flex;
 		flex-direction: column;
 
@@ -64,12 +65,12 @@ const AppFooter: React.FC = () => {
 		<FooterContainer>
 			<div className="_container">
 				<div className="_nav">
-					<Image alt='Ninjas Logo' height={40} src={NinjasLogo} width={40}/>
+					<Image alt="Da Vinci 4744 logo" height={40} src={DaVinciLogo} width={40}/>
 				</div>
 				<Separator/>
 				<div className="_lower">
 					<div className="_rights_text">
-						All rights reserved © Ninjas #4744 since 2013
+						All rights reserved © Da Vinci 4744 since 2013
 					</div>
 					<div className="_socials">
 						<NextLink href={siteConfig.siteLinks.github}>

@@ -15,7 +15,8 @@ type Props = {
 const TabsWrapper = styled.nav`
 	width: 100%;
 	border-bottom: 1px solid ${colors.border};
-	background: ${colors.background};
+	background: ${colors.surface};
+	box-shadow: inset 0 -1px 0 rgba(20, 37, 48, 0.12);
 `;
 
 const TabsContainer = styled.div`
@@ -56,19 +57,20 @@ const Tab = styled(Link)<{ $active: boolean }>`
 	min-height: 48px;
 	padding: 0.75rem 1rem;
 	border-bottom: 2px solid
-		${({ $active }) => ($active ? colors.text.primary : "transparent")};
+		${({ $active }) => ($active ? colors.accent : "transparent")};
 	margin-bottom: -1px;
-	transition: border-color 0.2s ease, color 0.2s ease;
+	transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
 	font-size: ${fontSizes.medium};
 	font-weight: ${({ $active }) => ($active ? 600 : 400)};
 	color: ${({ $active }) =>
-		$active ? colors.text.primary : colors.text.secondary};
+		$active ? colors.accentHover : colors.text.secondary};
 	text-align: center;
 	white-space: nowrap;
 	text-decoration: none;
 
 	&:hover {
-		color: ${colors.text.primary};
+		color: ${colors.accentHover};
+		background: ${colors.accentSoft};
 	}
 
 	${mQuery.mobile} {

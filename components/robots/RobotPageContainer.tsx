@@ -77,9 +77,10 @@ const PanelCard = styled.div`
 	flex-direction: column;
 	gap: 0.85rem;
 	border: 1px solid ${colors.border};
-	border-radius: 16px;
+	border-radius: 18px;
 	padding: 1.25rem;
-	background: ${colors.background};
+	background: ${colors.surface};
+	box-shadow: 0 1rem 2.25rem rgba(22, 38, 49, 0.14);
 `;
 
 const PanelTitle = styled.h2`
@@ -126,14 +127,15 @@ const NavLink = styled(Link)`
 	flex-direction: column;
 	gap: 0.15rem;
 	padding: 0.75rem;
-	border-radius: 12px;
+	border-radius: 14px;
 	border: 1px solid ${colors.border};
 	background: ${colors.accent_background};
-	transition: border-color 0.2s ease, background 0.2s ease;
+	transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 
 	&:hover {
-		border-color: rgba(59, 130, 246, 0.45);
-		background: rgba(59, 130, 246, 0.08);
+		border-color: ${colors.accent};
+		background: ${colors.accentSoft};
+		transform: translateY(-2px);
 	}
 
 	> ._direction {
@@ -166,10 +168,10 @@ const Card = styled.article`
 	flex-direction: column;
 	gap: 2rem;
 	border: 1px solid ${colors.border};
-	border-radius: 16px;
+	border-radius: 18px;
 	padding: 2rem;
-	background: ${colors.background};
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+	background: ${colors.surface};
+	box-shadow: 0 1.5rem 3.5rem rgba(22, 38, 49, 0.24);
 
 	${mQuery.mobile} {
 		padding: 1.25rem;
@@ -192,13 +194,13 @@ const ImageFrame = styled.div`
 	position: relative;
 	width: 100%;
 	aspect-ratio: 16 / 10;
-	border-radius: 16px;
+	border-radius: 18px;
 	overflow: hidden;
 	border: 1px solid ${colors.border};
 	background: ${colors.accent_background};
 	box-shadow:
-		0 0 0 1px rgba(59, 130, 246, 0.08),
-		0 16px 32px rgba(0, 0, 0, 0.35);
+		0 0 0 1px ${colors.accentSoft},
+		0 1rem 2.25rem rgba(22, 38, 49, 0.3);
 
 	> img {
 		width: 100%;
@@ -273,9 +275,9 @@ const CompBadge = styled.a`
 	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 
 	&:hover {
-		color: #7db2ff;
-		border-color: rgba(59, 130, 246, 0.55);
-		background: rgba(59, 130, 246, 0.1);
+		color: ${colors.accentHover};
+		border-color: ${colors.accent};
+		background: ${colors.accentSoft};
 	}
 
 	&:focus-visible {
@@ -307,7 +309,7 @@ const BlueBannerLink = styled.a`
 
 	&:hover {
 		transform: translateY(-4px);
-		filter: drop-shadow(0 16px 18px rgba(29, 78, 216, 0.28));
+		filter: drop-shadow(0 1rem 1.15rem rgba(22, 38, 49, 0.36));
 	}
 
 	&:focus-visible {
@@ -388,18 +390,18 @@ const AwardLink = styled.a`
 	transition: border-color 0.2s ease, background 0.2s ease;
 
 	&:hover {
-		border-color: rgba(245, 158, 11, 0.55);
-		background: rgba(245, 158, 11, 0.07);
+		border-color: ${colors.accent};
+		background: ${colors.accentSoft};
 	}
 
 	&:focus-visible {
-		outline: 2px solid #f59e0b;
+		outline: 2px solid ${colors.accentHover};
 		outline-offset: 2px;
 	}
 
 	> svg {
 		margin-top: 0.15rem;
-		color: #fbbf24;
+		color: ${colors.accent};
 		font-size: 1rem;
 	}
 `;
@@ -436,16 +438,17 @@ const ResourceLink = styled.a`
 	gap: 0.7rem;
 	padding: 0.75rem;
 	border: 1px solid ${colors.border};
-	border-radius: 10px;
+	border-radius: 12px;
 	background: ${colors.accent_background};
 	color: ${colors.text.primary};
 	font-size: ${fontSizes.small};
 	font-weight: 600;
-	transition: border-color 0.2s ease, background 0.2s ease;
+	transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 
 	&:hover {
-		border-color: rgba(59, 130, 246, 0.55);
-		background: rgba(59, 130, 246, 0.1);
+		border-color: ${colors.accent};
+		background: ${colors.accentSoft};
+		transform: translateY(-2px);
 	}
 
 	&:focus-visible {
@@ -454,7 +457,7 @@ const ResourceLink = styled.a`
 	}
 
 	> svg:first-child {
-		color: #7db2ff;
+		color: ${colors.accent};
 		font-size: 1rem;
 	}
 

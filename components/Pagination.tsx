@@ -18,7 +18,7 @@ const PaginationContainer = styled.div`
 	> ._page_button {
         padding: 0.4rem 0.75rem;
         border-radius: 0.375rem;
-        background-color: transparent;
+		background: ${colors.surface};
         color: ${colors.text.primary};
         border: 1px solid ${colors.border};
         cursor: pointer;
@@ -26,12 +26,14 @@ const PaginationContainer = styled.div`
         min-height: 40px;
 		
 		&.active {
-			background-color: ${colors.background};
-			color: ${colors.text.secondary};
+			background: ${colors.accentSoft};
+			border-color: ${colors.accent};
+			color: ${colors.accentHover};
 		}
 
         &:hover {
-            background: ${colors.background};
+			background: ${colors.accentSoft};
+			border-color: ${colors.accent};
         }
 
         &:disabled {

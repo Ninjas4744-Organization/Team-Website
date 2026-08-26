@@ -17,13 +17,13 @@ const ImageCardContainer = styled.div<{ $interactive: boolean }>`
 	gap: 0.5rem;
 	flex: 1;
 	box-sizing: border-box;
-	transition: transform 150ms ease;
+	transition: transform 200ms ease;
 
 	${({ $interactive }) => $interactive && `
 		cursor: pointer;
 
 		&:hover {
-			transform: translateY(-0.25rem);
+			transform: translateY(-0.4rem);
 		}
 
 		&:focus-visible {
@@ -34,22 +34,31 @@ const ImageCardContainer = styled.div<{ $interactive: boolean }>`
 	`}
 	
 	> ._image {
-        background-color: ${colors.accent_background};
+		background: ${colors.surface};
         height: 250px;
         width: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 0.5rem;
-        border: 1px solid ${colors.border};
+		border-radius: 14px;
+		border: 1px solid ${colors.border};
+		box-shadow: 0 1rem 2rem rgba(22, 38, 49, 0.18);
+		overflow: hidden;
 
         img {
             max-height: 100%;
             width: auto;
             object-fit: contain;
             user-drag: none;
-            border-radius: 0.5rem;
-        }
+			border-radius: 14px;
+			transition: transform 300ms ease;
+		}
+
+		${({ $interactive }) => $interactive && `
+			&:hover img {
+				transform: scale(1.035);
+			}
+		`}
 	}
 	
 	> ._info {
@@ -61,12 +70,12 @@ const ImageCardContainer = styled.div<{ $interactive: boolean }>`
 		> ._name {
             color: ${colors.text.primary};
             font-size: 1.5rem;
-            font-weight: bold;
+			font-weight: 700;
             margin: 0;
 		}
 		
 		> ._role {
-            color: ${colors.text.secondary};
+			color: ${colors.text.secondary};
             font-size: 1rem;
             margin: 0;
 		}

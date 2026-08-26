@@ -41,8 +41,9 @@ const SponsorUs = styled.section`
 	margin-top: 2.5rem;
 	padding: 1.5rem;
 	border: 1px solid ${colors.border};
-	border-radius: 16px;
-	background: ${colors.background};
+	border-radius: 18px;
+	background: ${colors.surface};
+	box-shadow: 0 1rem 2.25rem rgba(22, 38, 49, 0.14);
 	text-align: center;
 
 	> h2 {
@@ -59,8 +60,10 @@ const SponsorUs = styled.section`
 	}
 
 	> a {
-		color: ${colors.accent};
-		text-decoration: none;
+		color: ${colors.accentHover};
+		font-weight: 700;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
 
 		&:hover {
 			text-decoration: underline;
@@ -99,7 +102,7 @@ export default function SponsorsPage() {
 			<SponsorUs>
 				<h2>Sponsor us</h2>
 				<p>
-					Thanks for wanting to support Ninjas #4744. Reach out at{" "}
+					Thanks for wanting to support Da Vinci 4744. Reach out at{" "}
 					<a href="mailto:ninjas4744@gmail.com">ninjas4744@gmail.com</a>.
 				</p>
 			</SponsorUs>

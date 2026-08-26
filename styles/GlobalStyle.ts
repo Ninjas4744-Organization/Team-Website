@@ -1,16 +1,17 @@
 "use client";
 
 import { createGlobalStyle } from 'styled-components';
+import { colors } from './vars';
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --background: #ffffff;
-        --foreground: #171717;
+        --background: #627A8B;
+        --foreground: #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --background: #0a0a0a;
+            --background: #627A8B;
             --foreground: #ededed;
         }
     }
@@ -25,6 +26,8 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--foreground);
         background: var(--background);
         font-family: Arial, Helvetica, sans-serif;
+		min-height: 100svh;
+		line-height: 1.5;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -40,9 +43,37 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	::selection {
+		background: ${colors.accent};
+		color: ${colors.text.onAccent};
+	}
+
+	:focus-visible {
+		outline: 3px solid ${colors.accentHover};
+		outline-offset: 3px;
+	}
+
     @media (prefers-color-scheme: dark) {
         html {
             color-scheme: dark;
         }
     }
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			scroll-behavior: auto !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
 `;

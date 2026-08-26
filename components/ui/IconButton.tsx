@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {fontSizes} from "@/styles/vars";
+import {colors, fontSizes} from "@/styles/vars";
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
@@ -10,18 +10,23 @@ const IconButtonContainer = styled.button`
 	padding: 0.5rem;
 	box-sizing: border-box;
 	display: inline-flex;
-	border: 1px solid transparent;
+	border: 1px solid ${colors.border};
 	cursor: pointer;
-	background-color: transparent;
-	transition: background-color 0.2s;
+	background: transparent;
+	color: ${colors.text.secondary};
+	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 	font-size: ${fontSizes.large};
 
 	&:hover {
-		background-color: rgba(0, 0, 0, 0.1);
+		background: ${colors.accentSoft};
+		border-color: ${colors.accent};
+		color: ${colors.accentHover};
+		transform: translateY(-1px);
 	}
 
 	&:active {
-		background-color: rgba(0, 0, 0, 0.2);
+		transform: translateY(0);
+		background: rgba(175, 199, 211, 0.26);
 	}
 `;
 export const IconButton: React.FC<IconButtonProps> = ({children, ...props}) => {

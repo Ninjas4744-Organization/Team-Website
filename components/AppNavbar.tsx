@@ -8,7 +8,7 @@ import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { FaInstagram, FaGithub, FaFacebookF } from "react-icons/fa";
 import { motion } from "motion/react";
 import TBAIcon from "./TBAIcon";
-import NinjasLogo from "@/public/assets/NinjasLogo.svg";
+import DaVinciLogo from "@/public/assets/DaVinciLogo.svg";
 import siteConfig from "@/config/siteConfig";
 import styled from "styled-components";
 import {colors, fontSizes, mQuery} from "@/styles/vars";
@@ -23,14 +23,24 @@ interface MenuToggleProps {
 
 const NavbarMenuToggleStyle = styled.button`
 	border: 1px solid ${colors.border};
-	border-radius: 10px;
+	border-radius: 12px;
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
-	padding: 0.75rem;
+	justify-content: center;
+	padding: 0.65rem;
 	gap: 0.5rem;
 	box-sizing: border-box;
 	line-height: 1.25rem;
+	background: ${colors.surfaceRaised};
+	color: ${colors.text.primary};
+	transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+
+	&:hover {
+		background: ${colors.accentSoft};
+		border-color: ${colors.accent};
+		transform: translateY(-1px);
+	}
 
 	${mQuery.desktop} {
 		display: none;
@@ -38,26 +48,55 @@ const NavbarMenuToggleStyle = styled.button`
 `;
 const NavbarMenuToggle = ({ onClick, isMenuOpen }: MenuToggleProps) => {
 	return (
-		<NavbarMenuToggleStyle onClick={onClick}>
+		<NavbarMenuToggleStyle
+			onClick={onClick}
+			aria-controls="mobile-navigation"
+			aria-expanded={isMenuOpen}
+			aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+		>
 			{isMenuOpen ? <IoMdClose /> : <IoIosMenu />}
 		</NavbarMenuToggleStyle>
 	);
 };
 
 const NavbarStyle = styled.div`
+	position: sticky;
+	top: 0;
+	z-index: 50;
 	max-width: 100%;
-	height: 3.5rem;
-	padding-inline: 1rem;
+	height: 4.25rem;
+	padding-inline: 1.25rem;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: ${colors.background};
+	border-bottom: 1px solid ${colors.border};
+	background: rgba(49, 75, 93, 0.88);
+	backdrop-filter: blur(18px);
+	box-shadow: 0 0.6rem 1.75rem rgba(22, 38, 49, 0.16);
+
+	${mQuery.mobile} {
+		height: 3.75rem;
+		padding-inline: 0.75rem;
+	}
 
 	> ._logo {
-		padding: 10px;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+
+		> a {
+			display: grid;
+			place-items: center;
+			width: 2.75rem;
+			height: 2.75rem;
+			border-radius: 10px;
+			transition: background 180ms ease, transform 180ms ease;
+
+			&:hover {
+				background: ${colors.accentSoft};
+				transform: translateY(-1px);
+			}
+		}
 	}
 
 	> ._desktop_view {
@@ -85,14 +124,16 @@ const NavbarStyle = styled.div`
 
 const MobileMenuStyle = styled.div`
 	position: absolute;
-	background-color: ${colors.background};
-	border-radius: 0.375rem;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	pointer-events: auto;
+	background: ${colors.surface};
+	border: 1px solid ${colors.border};
+	border-radius: 14px;
+	box-shadow: 0 1.25rem 2.5rem ${colors.shadow};
 	padding: 1rem;
 	z-index: 1000;
-	left: 50%;
-	top: 2rem;
-	transform: translateX(-50%);
+	left: 0.75rem;
+	right: 0.75rem;
+	top: 4.25rem;
 
 	${mQuery.desktop} {
 		display: none;
@@ -114,17 +155,15 @@ const MobileMenuStyle = styled.div`
 
 		> ._link {
 			text-decoration: none;
-			padding: 0.5rem 0;
+			padding: 0.7rem 0.75rem;
 			border-radius: 0.375rem;
-			transition: all;
-			transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-			transition-duration: 150ms;
+			transition: background-color 180ms ease, color 180ms ease;
 			cursor: pointer;
 			font-weight: 500;
 
 			&:hover {
-				background-color: ${colors.border};
-				color: ${colors.accent};
+				background-color: ${colors.accentSoft};
+				color: ${colors.accentHover};
 			}
 		}
 	}
@@ -132,19 +171,23 @@ const MobileMenuStyle = styled.div`
 
 const SponsorLink = styled(NextLink)`
 	border: 1px solid ${colors.border};
-	border-radius: 10px;
+	border-radius: 12px;
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
-	padding: 0.75rem;
+	padding: 0.62rem 0.8rem;
 	gap: 0.5rem;
 	box-sizing: border-box;
 	line-height: 1.25rem;
-	color: inherit;
+	color: ${colors.text.primary};
 	text-decoration: none;
+	background: ${colors.accentSoft};
+	transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 
 	&:hover {
-		background-color: ${colors.border};
+		background: rgba(175, 199, 211, 0.28);
+		border-color: ${colors.accent};
+		transform: translateY(-1px);
 	}
 `;
 
@@ -159,7 +202,7 @@ const AppNavbar: React.FC = () => {
 		<NavbarStyle>
 			<div className="_logo">
 				<NextLink href={"/"}>
-					<Image alt='NinjasLogo' height={40} width={40} src={NinjasLogo} />
+					<Image alt="Da Vinci 4744 logo" height={40} width={40} src={DaVinciLogo} />
 				</NextLink>
 				<NavbarMenuToggle isMenuOpen={isMenuOpen} onClick={handleMenuToggle} />
 			</div>
@@ -189,7 +232,7 @@ const AppNavbar: React.FC = () => {
 						</IconButton>
 					</NextLink>
 					<SponsorLink href={siteConfig.siteLinks.sponsors}>
-						<FaHeart color="#dc2626" />
+						<FaHeart color={colors.accent} />
 						Sponsor
 					</SponsorLink>
 				</div>
@@ -197,8 +240,12 @@ const AppNavbar: React.FC = () => {
 
 
 			{isMenuOpen && (
-				<motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: -30 }} style={{ zIndex: 9999, position: "relative" }}>
-					<MobileMenuStyle>
+				<motion.div
+					animate={{ opacity: 1, y: 0 }}
+					initial={{ opacity: 0, y: -16 }}
+					style={{ zIndex: 9999, position: "fixed", inset: 0, pointerEvents: "none" }}
+				>
+					<MobileMenuStyle id="mobile-navigation">
 						<div className="_title">
 							Navigation
 						</div>

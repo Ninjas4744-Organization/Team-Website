@@ -20,7 +20,7 @@ const Description = styled.p`
 const YearSection = styled.section`
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.15rem;
 	margin-bottom: 2.5rem;
 `;
 
@@ -33,7 +33,7 @@ const YearHeading = styled.h2`
 const ImageGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-	gap: 1rem;
+	gap: 1.25rem;
 
 	${mQuery.mobile} {
 		grid-template-columns: 1fr;
@@ -44,16 +44,22 @@ const ImageCard = styled.button`
 	margin: 0;
 	padding: 0;
 	border: 1px solid ${colors.border};
-	border-radius: 16px;
+	border-radius: 18px;
 	overflow: hidden;
-	background: ${colors.background};
+	background: ${colors.surface};
 	cursor: pointer;
 	text-align: left;
-	transition: border-color 0.2s ease, transform 0.2s ease;
+	box-shadow: 0 1rem 2.25rem rgba(22, 38, 49, 0.14);
+	transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 
 	&:hover {
-		border-color: rgba(59, 130, 246, 0.45);
-		transform: translateY(-2px);
+		border-color: ${colors.accent};
+		box-shadow: 0 1.4rem 2.75rem rgba(22, 38, 49, 0.22);
+		transform: translateY(-4px);
+
+		img {
+			transform: scale(1.04);
+		}
 	}
 `;
 
@@ -65,14 +71,16 @@ const ImageFrame = styled.div`
 
 	> img {
 		object-fit: cover;
+		transition: transform 350ms ease;
 	}
 `;
 
 const Caption = styled.span`
 	display: block;
-	padding: 0.75rem 1rem;
+	padding: 0.9rem 1rem;
 	font-size: ${fontSizes.small};
 	color: ${colors.text.secondary};
+	line-height: 1.4;
 `;
 
 export default function GalleryPage() {

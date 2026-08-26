@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {colors} from "@/styles/vars";
 
 export const Separator = styled.div`
 	height: 1px;
-	background-color: #444444;
+	background-color: ${colors.border};
 	margin: 10px 0;
 	border: none;
-	opacity: 0.5;
+	opacity: 1;
 	width: 100%;
 	display: block;
 	box-sizing: border-box;

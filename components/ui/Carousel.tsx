@@ -18,7 +18,7 @@ interface CarouselProps {
 }
 
 const CarouselContainer = styled.div`
-	margin: 0.6rem;
+	margin: 0.75rem 0;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -29,7 +29,11 @@ const CarouselContainer = styled.div`
 	}
 
 	> ._card {
-		transition-duration: 200ms;
+		cursor: grab;
+
+		&:active {
+			cursor: grabbing;
+		}
 	}
 `;
 

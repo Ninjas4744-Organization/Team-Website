@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import {colors, fontSizes} from "@/styles/vars";
+import {colors, fontSizes, mQuery} from "@/styles/vars";
 
 interface CarouselCardProps {
 	cardTitle: string;
@@ -16,12 +16,13 @@ const Wrapper = styled.div`
 
 const CardContainer = styled.div`
 	display: flex;
-	background-color: ${colors.background};
-	border-radius: 0.5rem;
+	background: ${colors.surface};
+	border-radius: 18px;
 	width: 83.3333%;
 	min-height: 300px;
 	border: 1px solid ${colors.border};
 	box-sizing: border-box;
+	box-shadow: 0 1.25rem 2.5rem rgba(22, 38, 49, 0.15);
 `;
 
 const Content = styled.div`
@@ -31,6 +32,10 @@ const Content = styled.div`
 	width: 100%;
 	padding: 16px;
 	gap: 1.25rem;
+
+	${mQuery.mobile} {
+		flex-direction: column;
+	}
 `;
 
 const ImageWrapper = styled.div`
@@ -40,7 +45,7 @@ const ImageWrapper = styled.div`
 		width: 100%;
 		height: auto;
 		object-fit: cover;
-		border-radius: 0.5rem;
+		border-radius: 12px;
 	}
 `;
 
@@ -53,7 +58,7 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-	color: white;
+	color: ${colors.text.primary};
 	font-size: ${fontSizes.super};
 	font-weight: bold;
 	margin-bottom: 0.5rem;
@@ -62,9 +67,10 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-	color: white;
+	color: ${colors.text.secondary};
 	font-size: ${fontSizes.medium};
-	margin-top: 2.5rem;
+	line-height: 1.6;
+	margin-top: 1rem;
 	text-align: start;
 `;
 

@@ -7,9 +7,10 @@ import { colors, fontSizes, mQuery } from "@/styles/vars";
 
 const FirstSectionContainer = styled.section`
 	width: 100%;
-	padding: 2.5rem 1.5rem;
+	padding: 3.5rem 1.5rem;
 	background: ${colors.accent_background};
 	border-block: 1px solid ${colors.border};
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 
 	${mQuery.mobile} {
 		padding: 2rem 1rem;
@@ -30,6 +31,10 @@ const LogoWrap = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem 1.25rem;
+	border: 1px solid ${colors.border};
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.05);
 `;
 
 const Title = styled.h2`
@@ -51,13 +56,23 @@ const Links = styled.div`
 	gap: 1rem;
 
 	a {
-		color: ${colors.accent};
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		padding: 0.55rem 0.9rem;
+		border: 1px solid ${colors.accent};
+		border-radius: 999px;
+		background: ${colors.accentSoft};
+		color: ${colors.accentHover};
 		font-size: ${fontSizes.medium};
 		font-weight: 600;
 		text-decoration: none;
+		transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 
 		&:hover {
-			text-decoration: underline;
+			background: ${colors.accent};
+			color: ${colors.text.onAccent};
+			transform: translateY(-2px);
 		}
 	}
 `;

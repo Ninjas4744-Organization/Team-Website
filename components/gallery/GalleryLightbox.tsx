@@ -24,7 +24,8 @@ const Overlay = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding: 1.5rem;
-	background: rgba(0, 0, 0, 0.88);
+	background: rgba(16, 29, 38, 0.88);
+	backdrop-filter: blur(14px);
 `;
 
 const LightboxPanel = styled.div`
@@ -45,7 +46,7 @@ const ImageStage = styled.div`
 	position: relative;
 	min-height: 280px;
 	height: min(72vh, 720px);
-	border-radius: 16px;
+	border-radius: 18px;
 	overflow: hidden;
 	border: 1px solid ${colors.border};
 	background: ${colors.accent_background};
@@ -61,8 +62,9 @@ const SidePanel = styled.aside`
 	gap: 1rem;
 	padding: 1.25rem;
 	border: 1px solid ${colors.border};
-	border-radius: 16px;
-	background: ${colors.background};
+	border-radius: 18px;
+	background: ${colors.surface};
+	box-shadow: 0 1.5rem 4rem rgba(9, 20, 28, 0.44);
 `;
 
 const Caption = styled.p`
@@ -86,18 +88,20 @@ const ActionButton = styled.a`
 	justify-content: center;
 	gap: 0.5rem;
 	padding: 0.75rem 1rem;
-	border-radius: 10px;
+	border-radius: 12px;
 	border: 1px solid ${colors.border};
-	background: ${colors.accent_background};
+	background: ${colors.accentSoft};
 	color: ${colors.text.primary};
 	font-size: ${fontSizes.medium};
 	font-weight: 600;
 	text-decoration: none;
-	transition: background 0.2s ease, border-color 0.2s ease;
+	transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 
 	&:hover {
-		background: rgba(59, 130, 246, 0.12);
-		border-color: rgba(59, 130, 246, 0.45);
+		background: ${colors.accent};
+		border-color: ${colors.accentHover};
+		color: ${colors.text.onAccent};
+		transform: translateY(-1px);
 	}
 `;
 
@@ -107,7 +111,7 @@ const CloseButton = styled.button`
 	justify-content: center;
 	gap: 0.5rem;
 	padding: 0.75rem 1rem;
-	border-radius: 10px;
+	border-radius: 12px;
 	border: 1px solid ${colors.border};
 	background: transparent;
 	color: ${colors.text.secondary};
@@ -117,7 +121,7 @@ const CloseButton = styled.button`
 
 	&:hover {
 		color: ${colors.text.primary};
-		background: ${colors.accent_background};
+		background: ${colors.surfaceRaised};
 	}
 `;
 

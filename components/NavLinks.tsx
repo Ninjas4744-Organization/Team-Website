@@ -4,19 +4,23 @@ import NextLink from "next/link";
 import {colors} from "@/styles/vars";
 
 const NavLinksContainer = styled.div`
-	margin: 0 20px;
+	display: flex;
+	gap: 0.25rem;
+	margin: 0 1.5rem;
 	justify-content: center;
 	align-items: center;
 
 	> ._link {
-		font-weight: 500;
-		transition: all;
-		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-		transition-duration: 150ms;
-		margin-right: 20px;
+		padding: 0.5rem 0.7rem;
+		border-radius: 8px;
+		color: ${colors.text.secondary};
+		font-weight: 600;
+		transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 
 		&:hover {
-			color: ${colors.accent};
+			background: ${colors.accentSoft};
+			color: ${colors.accentHover};
+			transform: translateY(-1px);
 		}
 	}
 `;

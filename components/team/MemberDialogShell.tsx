@@ -22,7 +22,8 @@ const Shell = styled.div`
 	place-items: center;
 	padding: 1.5rem;
 	overflow: hidden;
-	background: rgb(0 0 0 / 78%);
+	background: rgb(16 29 38 / 82%);
+	backdrop-filter: blur(12px);
 
 	> ._backdrop {
 		position: absolute;
@@ -57,8 +58,8 @@ const Shell = styled.div`
 		padding: 1.5rem;
 		border: 2px solid ${colors.accent};
 		border-radius: 1rem;
-		background: ${colors.background};
-		box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 50%);
+		background: ${colors.surface};
+		box-shadow: 0 1.5rem 4rem rgb(9 20 28 / 56%);
 		animation: ${popIn} 250ms ease-out;
 
 		> ._close {

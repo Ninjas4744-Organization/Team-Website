@@ -24,7 +24,8 @@ const PopoverButtonContainer = styled.div`
 		line-height: 1.25rem;
 
 		&:hover, &._trigger-active {
-			background-color: ${colors.border};
+			background: ${colors.accentSoft};
+			border-color: ${colors.accent};
 		}
 	}
 
@@ -34,9 +35,10 @@ const PopoverButtonContainer = styled.div`
 		left: -100%;
 		transform: translateX(-50%);
 		margin-top: 10px;
-		background-color: #111111;
-		border-radius: 0.375rem;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		background: ${colors.surface};
+		border: 1px solid ${colors.border};
+		border-radius: 14px;
+		box-shadow: 0 1.25rem 2.5rem ${colors.shadow};
 		padding: 15px;
 		z-index: 1000;
 		white-space: nowrap;
@@ -45,7 +47,7 @@ const PopoverButtonContainer = styled.div`
 			font-weight: bold;
 			font-size: ${fontSizes.medium};
 			line-height: 1.5rem;
-			color: #ffffff;
+			color: ${colors.accentHover};
 			padding: 0;
 			margin-bottom: 10px;
 			text-align: start;
@@ -99,7 +101,7 @@ export const SponsorPopover = () => {
 				aria-haspopup="true"
 				aria-expanded={isVisible}
 				aria-controls="popover-content">
-				<FaHeart color="#dc2626" />
+				<FaHeart color={colors.accent} />
 				Sponsor
 			</Button>
 			{isVisible && (

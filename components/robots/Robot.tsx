@@ -18,13 +18,14 @@ const CardLink = styled(Link)`
 	overflow: hidden;
 	border: 1px solid ${colors.border};
 	border-radius: 20px;
-	background: ${colors.background};
-	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+	background: ${colors.surface};
+	box-shadow: 0 0.9rem 2rem rgba(22, 38, 49, 0.14);
+	transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 
 	&:hover {
 		transform: translateY(-4px);
-		border-color: rgba(59, 130, 246, 0.65);
-		box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+		border-color: ${colors.accent};
+		box-shadow: 0 1.4rem 2.75rem rgba(22, 38, 49, 0.28);
 	}
 
 	&:focus-visible {
@@ -60,7 +61,7 @@ const YearBadge = styled.span`
 	padding: 0.35rem 0.7rem;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 	border-radius: 999px;
-	background: rgba(9, 9, 11, 0.78);
+	background: rgba(20, 37, 48, 0.8);
 	backdrop-filter: blur(8px);
 	color: #fff;
 	font-size: ${fontSizes.small};
@@ -102,8 +103,8 @@ const Type = styled.span`
 	flex: none;
 	padding: 0.28rem 0.55rem;
 	border-radius: 7px;
-	background: rgba(59, 130, 246, 0.12);
-	color: #7db2ff;
+	background: ${colors.accentSoft};
+	color: ${colors.accentHover};
 	font-size: 0.72rem;
 	font-weight: 700;
 	letter-spacing: 0.05em;
