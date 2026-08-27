@@ -64,7 +64,7 @@ export const TeamHighlights: React.FC = () => {
 		},
 		{
 			title: "Establishment",
-			description: "Da Vinci 4744 was established in 2013 at the Amal sciences and arts school. We started as a small team and throughout the years we grew, now consisting of 20 young students from middle to high school.",
+			description: "Da Vinci 4744 was established in 2013 as Ninjas at the Amal sciences and arts school. We started as a small team and throughout the years we grew, now consisting of 20 young students from middle to high school.",
 			icon: <IoBuildOutline size={30}/>,
 		},
 	];

@@ -17,8 +17,8 @@ const siteConfig = {
 	siteLinks: {
 		sponsors: "/sponsors",
 		github: "https://github.com/Ninjas4744-Organization",
-		facebook: "https://www.facebook.com/Ninjas4744/?locale=he_IL",
-		instagram: "https://www.instagram.com/ninjas4744/?hl=en",
+		facebook: "https://www.facebook.com/DaVinci4744",
+		instagram: "https://www.instagram.com/davinci4744/?hl=en",
 		first: "https://www.firstinspires.org/",
 		tba: "https://www.thebluealliance.com/team/4744/",
 	},
