@@ -87,13 +87,13 @@ const TeamPage = () => {
 	];
 
 	const mentors = [
+		{ id: "shai-leib", name: "Shai Leib", role: "Lead Mentor & Mechanics", image: blankPicture },
+		{ id: "kfir-nevo", name: "Kfir Nevo", role: "C&M", image: blankPicture },
+		{ id: "tal-ben-amram", name: "Tal Ben Amram", role: "Software", image: blankPicture },
+		{ id: "jacob-nazarov", name: "Jacob Nazarov", role: "CAD", image: blankPicture },
+		{ id: "adi-maymon", name: "Adi Maymon", role: "Electrical", image: blankPicture },
 		{ id: "ido-shoshani", name: "Ido Shoshani", role: "Strategy", image: blankPicture },
 		{ id: "guy-pacha", name: "Guy Pacha", role: "Strategy", image: blankPicture },
-		{ id: "shai-leib", name: "Shai Leib", role: "Lead Mentor & Mechanics", image: blankPicture },
-		{ id: "tal-ben-amram", name: "Tal Ben Amram", role: "Software", image: blankPicture },
-		{ id: "kfir-nevo", name: "Kfir Nevo", role: "C&M", image: blankPicture },
-		{ id: "jacob-nazarov", name: "Jacob Nazarov", role: "CAD", image: blankPicture },
-		{ id: "adi-noam-maymon", name: "Adi Noam Maymon", role: "Electrical", image: blankPicture },
 	];
 
 	return (
