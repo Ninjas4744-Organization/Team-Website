@@ -47,8 +47,8 @@ const teamEasterEggs: Record<string, TeamEasterEgg> = {
 		mediaType: "video",
 		birthday: { month: 8, day: 20 },
 	},
-	"adi-noam-maymon": {
-		memberId: "adi-noam-maymon",
+	"adi-maymon": {
+		memberId: "adi-maymon",
 		memberName: "Adi",
 		media: "/assets/easter-eggs/adi.webp",
 		mediaType: "image",
