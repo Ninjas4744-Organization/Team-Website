@@ -61,26 +61,29 @@ const TeamPageContainer = styled.div`
 			}
 		}
 		
-		> ._cards {
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: row;
-			align-items: flex-start;
-			justify-content: center;
-			gap: 1.25rem;
+		> ._cards-wrapper {
+			width: 100%;
+			max-width: calc(5 * 250px + 4 * 1.25rem);
+			margin-top: 1.25rem;
 
-			> * {
-				flex: 0 0 250px;
-			}
-			
-			${mQuery.mobile} {
-				flex-direction: column;
-				gap: 0.75rem;
-				margin-top: 1.25rem;
-				width: 100%;
+			> ._cards {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				gap: 1.25rem;
 
 				> * {
-					flex: 1;
+					flex: 0 0 250px;
+				}
+
+				${mQuery.mobile} {
+					flex-direction: column;
+					gap: 0.75rem;
+					align-items: center;
+
+					> * {
+						flex: 1;
+					}
 				}
 			}
 		}
@@ -117,20 +120,22 @@ const TeamPage = () => {
 					<h2 className="_title">Mentors</h2>
 					<p className="_subtitle">Meet our mentors</p>
 				</div>
-				<div className="_cards">
-					{mentors.map((item) => {
-						const easterEgg = getTeamEasterEgg(item.id);
+				<div className="_cards-wrapper">
+					<div className="_cards">
+						{mentors.map((item) => {
+							const easterEgg = getTeamEasterEgg(item.id);
 
-						return (
-							<ImageCard
-								key={item.id}
-								image={item.image}
-								name={item.name}
-								role={item.role}
-								onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
-							/>
-						);
-					})}
+							return (
+								<ImageCard
+									key={item.id}
+									image={item.image}
+									name={item.name}
+									role={item.role}
+									onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 			<div className="_section">
@@ -138,20 +143,22 @@ const TeamPage = () => {
 					<h2 className="_title">Leading Team</h2>
 					<p className="_subtitle">Meet our team leaders</p>
 				</div>
-				<div className="_cards">
-					{teamLeads.map((item) => {
-						const easterEgg = getTeamEasterEgg(item.id);
+				<div className="_cards-wrapper">
+					<div className="_cards">
+						{teamLeads.map((item) => {
+							const easterEgg = getTeamEasterEgg(item.id);
 
-						return (
-							<ImageCard
-								key={item.id}
-								image={item.image}
-								name={item.name}
-								role={item.role}
-								onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
-							/>
-						);
-					})}
+							return (
+								<ImageCard
+									key={item.id}
+									image={item.image}
+									name={item.name}
+									role={item.role}
+									onClick={easterEgg ? () => router.push(`/team/${item.id}`) : undefined}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</TeamPageContainer>
