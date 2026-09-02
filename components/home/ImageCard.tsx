@@ -78,6 +78,7 @@ const ImageCardContainer = styled.div<{ $interactive: boolean }>`
 			color: ${colors.text.secondary};
             font-size: 1rem;
             margin: 0;
+			text-align: center;
 		}
 	}
 `;
