@@ -65,13 +65,23 @@ const TeamPageContainer = styled.div`
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: row;
+			align-items: flex-start;
+			justify-content: center;
 			gap: 1.25rem;
+
+			> * {
+				flex: 0 0 250px;
+			}
 			
 			${mQuery.mobile} {
 				flex-direction: column;
 				gap: 0.75rem;
 				margin-top: 1.25rem;
 				width: 100%;
+
+				> * {
+					flex: 1;
+				}
 			}
 		}
 	}
