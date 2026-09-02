@@ -47,6 +47,13 @@ const teamEasterEggs: Record<string, TeamEasterEgg> = {
 		mediaType: "video",
 		birthday: { month: 8, day: 20 },
 	},
+	"adi-noam-maymon": {
+		memberId: "adi-noam-maymon",
+		memberName: "Adi",
+		media: "/assets/easter-eggs/adi.webp",
+		mediaType: "image",
+		birthday: { month: 4, day: 26 },
+	},
 };
 
 export function getTeamEasterEgg(memberId: string) {
