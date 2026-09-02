@@ -16,15 +16,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// Leads
-import elhayPicture from "@/public/assets/people/ElhayPicture2.png";
-import tzufPicture from "@/public/assets/people/TzufPicture3.png";
-import eitanPicture from "@/public/assets/people/EitanPicture.png";
-import yaroslavaPicture from "@/public/assets/people/YaroslavaPicture.png";
-// Mentors
-import kfirPicture from "@/public/assets/people/KfirPicture.png";
-import shaiPicture from "@/public/assets/people/ShaiPicture.png";
-import talPicture from "@/public/assets/people/TalPicture2.png";
 import blankPicture from "@/public/assets/people/blankPicture.png";
 import ImageCard from "@/components/home/ImageCard";
 import styled from "styled-components";
@@ -89,19 +80,20 @@ const TeamPage = () => {
 	const router = useRouter();
 	// Define team leads and mentors data
 	const teamLeads = [
-		{ id: "yaroslava-avdeev", name: "Yaroslava Avdeev", role: "Mechanics", image: yaroslavaPicture },
-		{ id: "tzuf-ben-yehuda", name: "Tzuf Ben Yehuda", role: "Captain", image: tzufPicture },
-		{ id: "eitan-grimblat", name: "Eitan Grimblat", role: "Software", image: eitanPicture },
-		{ id: "elhay-journo", name: "Elhay Journo", role: "Electronics", image: elhayPicture },
+		{ id: "elhay-journo", name: "Elhay Journo", role: "Software", image: blankPicture },
+		{ id: "ouriel-vana", name: "Ouriel Vana", role: "Electrical", image: blankPicture },
+		{ id: "gavriel-ilizirov", name: "Gavriel Ilizirov", role: "Mechanics", image: blankPicture },
+		{ id: "noa-zrihan", name: "Noa Zrihan", role: "C&M", image: blankPicture },
 	];
 
 	const mentors = [
 		{ id: "ido-shoshani", name: "Ido Shoshani", role: "Strategy", image: blankPicture },
 		{ id: "guy-pacha", name: "Guy Pacha", role: "Strategy", image: blankPicture },
-		{ id: "shai-leib", name: "Shai Leib", role: "Lead Mentor & Mechanics", image: shaiPicture },
-		{ id: "tal-ben-amram", name: "Tal Ben Amram", role: "Software", image: talPicture },
-		{ id: "kfir-nevo", name: "Kfir Nevo", role: "Software & Community", image: kfirPicture },
+		{ id: "shai-leib", name: "Shai Leib", role: "Lead Mentor & Mechanics", image: blankPicture },
+		{ id: "tal-ben-amram", name: "Tal Ben Amram", role: "Software", image: blankPicture },
+		{ id: "kfir-nevo", name: "Kfir Nevo", role: "C&M", image: blankPicture },
 		{ id: "jacob-nazarov", name: "Jacob Nazarov", role: "CAD", image: blankPicture },
+		{ id: "adi-noam-maymon", name: "Adi Noam Maymon", role: "Electrical", image: blankPicture },
 	];
 
 	return (
