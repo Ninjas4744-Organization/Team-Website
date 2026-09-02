@@ -1,16 +1,3 @@
-/**
- * Page Component
- *
- * This component represents the main page for the Da Vinci 4744 team. It displays
- * a hero section with the team’s picture and titles, followed by sections for Mentors
- * and Team Leads.
- *
- * Styled using Chakra UI, the component is responsive and leverages its design system
- * for consistent styling and spacing.
- *
- * Written by @DeveloperCron and ChatGPT
- */
-
 "use client";
 
 import Image from "next/image";

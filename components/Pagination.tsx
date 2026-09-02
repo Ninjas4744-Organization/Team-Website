@@ -94,7 +94,7 @@ const Pagination = observer(({ store }: Props) => {
 
 	return (
 		<PaginationContainer>
-			<button className="_page_button" onClick={() => prevPage()} disabled={currentPage === 0}>
+			<button className="_page_button" onClick={() => prevPage()}>
 				<FaChevronLeft />
 			</button>
 
@@ -111,7 +111,7 @@ const Pagination = observer(({ store }: Props) => {
 				)
 			)}
 
-			<button className="_page_button" onClick={() => nextPage()} disabled={currentPage === totalItems - 1}>
+			<button className="_page_button" onClick={() => nextPage()}>
 				<FaChevronRight />
 			</button>
 		</PaginationContainer>

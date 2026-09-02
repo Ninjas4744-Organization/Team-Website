@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { mQuery } from "@/styles/vars";
 
 const swipeConfidenceThreshold = 10000;
+const autoAdvanceIntervalMs = 7000;
+
 const swipePower = (offset: number, velocity: number) => {
 	return Math.abs(offset) * velocity;
 };
@@ -49,12 +51,26 @@ const Carousel: React.FC<CarouselProps> = observer(({ children }) => {
 		[],
 	);
 	const slideSignature = getSlideSignature(children);
-	const childItems = Children.toArray(children);
+	const childItems = useMemo(() => Children.toArray(children), [children]);
 	const { currentPage, nextPage, prevPage } = itemPaginationStore;
 
 	useEffect(() => {
 		itemPaginationStore.setItems(childItems);
-	}, [itemPaginationStore, slideSignature]);
+	}, [childItems, itemPaginationStore, slideSignature]);
+
+	useEffect(() => {
+		if (childItems.length < 2) return;
+
+		const intervalId = window.setInterval(() => {
+			const nextSlide = itemPaginationStore.currentPage >= childItems.length - 1
+				? 0
+				: itemPaginationStore.currentPage + 1;
+
+			itemPaginationStore.setPage(nextSlide);
+		}, autoAdvanceIntervalMs);
+
+		return () => window.clearInterval(intervalId);
+	}, [childItems.length, itemPaginationStore]);
 
 	return (
 		<CarouselContainer>
